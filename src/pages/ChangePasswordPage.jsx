@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import "../styles/changePassword.css"
 import { connect } from "react-redux";
 import { ChangePassword } from "../redux/actions/userActions";
-import {  withRouter, Redirect } from "react-router-dom";
-import NetflixNav from "../components/NetflixNav";
+import {  withRouter, Switch } from "react-router-dom";
+import NetflixNav from "../components/iMoviesNav";
 import { Button } from "reactstrap";
 import Footer from "../components/Footer";
 const ChangePasswordSchema = Yup.object().shape({
@@ -60,7 +60,7 @@ class ChangePasswordPage extends Component {
       <div>
       <NetflixNav color="black" />
 
-          {!user?<Redirect to="/user/login"/>:
+          {!user?<Switch to="/user/login"/>:
           <div className="cardForChange">
         <h1>Change password</h1>
         <br/>

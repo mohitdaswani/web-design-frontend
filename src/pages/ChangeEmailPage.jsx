@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import "../styles/changePassword.css";
 import { connect } from "react-redux";
 import { changeEmail } from "../redux/actions/userActions";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter, Switch } from "react-router-dom";
 import NetflixNav from "../components/iMoviesNav";
 import { Button } from "reactstrap";
 import Footer from "../components/Footer";
@@ -49,7 +49,7 @@ const ChangeEmailPage = ({ changeEmail, history }) => {
     <div>
       <NetflixNav color="black" />
       {!user ? (
-        <Redirect to="/user/login" />
+        <Switch to="/user/login" />
       ) : (
         <div className="cardForChange">
           <h1>Change Email</h1>
