@@ -1,36 +1,79 @@
 .boxstyle {
-    width: 383px;
-    margin: auto;
-    background: black;
+  width: 383px;
+  background: whitesmoke;
+  padding: 40px;
+  position: relative;
+  top: 60px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto auto;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000;
+}
+input {
+  height: 45px;
+  font-size: 18px;
+  background: #4b4747;
+  color: white;
+  border: transparent;
+  border-radius: 5px;
+}
+textarea {
+  font-size: 18px;
+  background: #4b4747;
+  color: white;
+}
+.custom-select {
+  background: #4b4747;
+  color: white;
+}
+.pageLayout {
+  height: 730px;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.596) 0%, rgba(0, 0, 0, .3) 100%, rgba(0, 0, 0, 0.65) 50%), url('https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg') no-repeat; */
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.596) 0%, rgba(0, 0, 0, .3) 100%, rgba(0, 0, 0, 0.65) 50%), url('https://cdn.wallpapersafari.com/65/44/c1xNqp.jpg') no-repeat; */
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.596) 0%,
+      rgba(0, 0, 0, 0.3) 100%,
+      rgba(0, 0, 0, 0.65) 50%
+    ),
+    url("https://cdn.wallpapersafari.com/65/44/c1xNqp.jpg") repeat-x;
+  background-size: cover;
+  backface-visibility: visible;
+  animation: slide 10s linear infinite;
+}
+@keyframes slide {
+  from {
+    background-position: 0 center;
+  }
+  to {
+    background-position: 300px center;
+  }
+}
+.thirdpartyLogin:focus {
+  outline: transparent;
+}
+.fa{
+  color: whitesmoke;
+  font-size:xx-large;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .boxstyle {
+    width: 330px;
+    background: whitesmoke;
+    /* background-image: "https://cdn.wallpapersafari.com/65/44/c1xNqp.jpg"; */
     padding: 40px;
     position: relative;
     top: 60px;
+  
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+  
   }
-  input{
-      height:45px;
-      font-size:18px;
-      background: #4b4747;
-      color: white;
-      border:transparent;
-      border-radius: 5px;
-  }
-  textarea{
-    font-size:18px;
-    background: #4b4747;
-    color: white;
-  }
-  .custom-select{
-      background: #4b4747;
-      color: white;
-  }
-  .pageLayout{
-    height: 730px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.596) 0%, rgba(0, 0, 0, .3) 100%, rgba(0, 0, 0, 0.65) 50%), url('https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg') no-repeat;
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
-    backface-visibility: hidden;
-  }
-  .thirdpartyLogin:focus{
-    outline: transparent;
-  }
+}

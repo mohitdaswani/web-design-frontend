@@ -76,7 +76,7 @@ class ForgotPasswordChange extends Component {
                   }}
                 >
                   <Field
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black"  }}
                     placeholder=" New password"
                     name="password"
                     type="password"
@@ -87,7 +87,7 @@ class ForgotPasswordChange extends Component {
                     <br />
                   )}
                   <Field
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black"  }}
                     placeholder=" Confirm password"
                     name="cpassword"
                     type="password"
@@ -100,7 +100,7 @@ class ForgotPasswordChange extends Component {
                   <br />
                   {this.state.error ? <p>{this.state.error}</p> : null}
 
-                  <Button color="danger" type="submit">
+                  <Button style = {{ background: "#6495ED"}}type="submit">
                     Submit
                   </Button>
                 </Form>

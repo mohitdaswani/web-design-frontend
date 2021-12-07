@@ -97,6 +97,10 @@ class RegisterPage extends Component {
                     color: "coral",
                   }}
                 >
+                  <br />
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                  <br />
+
                   <Field
                     className="input"
                     placeholder="Name"
@@ -104,6 +108,7 @@ class RegisterPage extends Component {
                       fontSize: "18px",
                       padding: "10px",
                       marginTop: "15px",
+                      background: "white"
                     }}
                     name="name"
                   />
@@ -111,7 +116,7 @@ class RegisterPage extends Component {
                   <Field
                     className="input"
                     placeholder="Email"
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black" }}
                     name="email"
                     type="email"
                   />
@@ -126,7 +131,7 @@ class RegisterPage extends Component {
                   <Field
                     className="input"
                     placeholder="Password"
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black" }}
                     name="password"
                     type="password"
                   />
@@ -138,7 +143,7 @@ class RegisterPage extends Component {
                   <Field
                     className="input"
                     placeholder="Phone number"
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black" }}
                     name="phoneNo"
                     type="integer"
                   />
@@ -154,15 +159,15 @@ class RegisterPage extends Component {
                   <ReCAPTCHA
                     sitekey="6LfuVsQZAAAAALI9jf2zXxAVR7pOxSzs45NAEj_f"
                     onChange={this.onChange}
+                    
                   />
                   
                   <br />
                   <Button
                     disabled={this.state.disableSubmitButton}
                     size="lg"
-                    color="danger"
-                    style={{background:"red"}} 
-                    type="submit"
+                  style = {{ background: "#6495ED"}}
+                  type="submit"
                   >
                     Sign Up
                   </Button>
@@ -170,7 +175,7 @@ class RegisterPage extends Component {
               )}
             </Formik>
             <br />
-            <p style={{ color: "#cacaca" }}>
+            <p style={{ color: "#F8F8FF" }}>
               Already a user?
               <Link
                 style={{ fontSize: "17px", color: "white" }}

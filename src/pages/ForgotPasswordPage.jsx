@@ -66,7 +66,7 @@ class ForgotPasswordPage extends Component {
                   }}
                 >
                   <Field
-                    style={{ fontSize: "18px", padding: "10px" }}
+                    style={{ fontSize: "18px", padding: "10px", background: "white", color: "black" }}
                     placeholder="  name@example.com"
                     name="email"
                     type="email"
@@ -78,7 +78,7 @@ class ForgotPasswordPage extends Component {
                   )}
                   <br />
                   {this.state.error ? <p>{this.state.error}</p> : null}
-                  <Button color="danger" type="submit">
+                  <Button type="submit" style = {{ background: "#6495ED"}}>
                     Submit
                   </Button>
                 </Form>
