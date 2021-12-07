@@ -15,6 +15,8 @@ import HomePage from './pages/HomePage';
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AddProductPage from "./pages/AddProductPage";
 import LatestPage from "./pages/LatestPage";
+import MoviePlayerPage from "./pages/MoviePlayerPage";
+import MoviesPage from "./pages/MoviesPage";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <Switch>
         
         <Route exact path="/user/register" component={RegisterPage} />
+        <Route exact path="/movies/language/" component={MoviesPage}/>
         <Route exact path="/user/Login" component={LoginPage} />
         <Route exact path="/admin/login" component={AdminLoginPage} />
         <Route exact path="/admin/addMovie" component={AddProductPage} />
@@ -37,6 +40,7 @@ function App() {
         />
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/latest" component={LatestPage}/>
+        <Route exact path="/movies/:MovieId" component={MoviePlayerPage}/>
         <Redirect to="/"/>
       </Switch>
     </div>
