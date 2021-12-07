@@ -34,7 +34,7 @@ export const registerUser = (data1) => async (dispatch) => {
 export const loginUser = (data1) => async (dispatch) => {
   try {
     const { data } = await Axios.post(
-      `https://powerful-tor-09724.herokuapp.com/user/register`,
+      `https://powerful-tor-09724.herokuapp.com/user/login`,
       data1,
       {
         headers: {
