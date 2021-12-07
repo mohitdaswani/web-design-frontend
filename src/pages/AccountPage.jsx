@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { Container, Col, Row } from "reactstrap";
-import NetflixNav from "../components/iMoviesNav";
+import MoviesNav from "../components/MoviesNav";
 import Footer from "../components/Footer";
 
 const AccountPage = () => {
@@ -18,7 +18,7 @@ const AccountPage = () => {
   };
   return (
     <>
-      <NetflixNav color="black" />
+      <MoviesNav color="black" />
 
       <div style={{ background: "white", marginTop: "50px" }}>
         <Container style={{ padding: "60px" }}>

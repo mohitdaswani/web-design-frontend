@@ -9,6 +9,7 @@ import ForgotPasswordChange from "./pages/ForgotPasswordChange";
 import ChangePasswordPage from "./pages/ChangePasswordPage";
 import ChangePhoneNoPage from "./pages/ChangePhoneNoPage";
 import ChangeEmailPage from "./pages/ChangeEmailPage";
+import AccountPage from "./pages/AccountPage";
 
 // Krishna's addition
 import HomePage from './pages/HomePage';
@@ -49,6 +50,7 @@ function App() {
         <Route exact path="/razorpay/:orderId" component={RazorpayPage}/>
         <Route exact path="/search" component={SearchPage}/>
         <Route exact path="/subscriptionPlans" component={SubscriptionPlanPage}/>
+        <Route exact path="/yourAccount" component={AccountPage}/>
         <Redirect to="/"/>
       </Switch>
     </div>
