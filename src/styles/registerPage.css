@@ -6,6 +6,7 @@
   top: 60px;
 
   background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgb(82, 191, 224); */
   margin: auto auto;
   padding: 40px;
   border-radius: 5px;
@@ -30,8 +31,6 @@ textarea {
 }
 .pageLayout {
   height: 730px;
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.596) 0%, rgba(0, 0, 0, .3) 100%, rgba(0, 0, 0, 0.65) 50%), url('https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg') no-repeat; */
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.596) 0%, rgba(0, 0, 0, .3) 100%, rgba(0, 0, 0, 0.65) 50%), url('https://cdn.wallpapersafari.com/65/44/c1xNqp.jpg') no-repeat; */
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.596) 0%,
@@ -39,7 +38,7 @@ textarea {
       rgba(0, 0, 0, 0.65) 50%
     ),
     url("https://cdn.wallpapersafari.com/65/44/c1xNqp.jpg") repeat-x;
-  background-size: cover;
+  /* background-size: cover; */
   backface-visibility: visible;
   animation: slide 10s linear infinite;
 }
@@ -55,6 +54,10 @@ textarea {
   outline: transparent;
 }
 .fa{
+  color: whitesmoke;
+  font-size:xx-large;
+}
+.fas{
   color: whitesmoke;
   font-size:xx-large;
 }

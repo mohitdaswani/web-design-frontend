@@ -108,7 +108,8 @@ class RegisterPage extends Component {
                       fontSize: "18px",
                       padding: "10px",
                       marginTop: "15px",
-                      background: "white"
+                      background: "white",
+                      color: "black"
                     }}
                     name="name"
                   />

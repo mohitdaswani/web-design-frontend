@@ -6,7 +6,7 @@ export const getSubscription = (data1) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/user/subscription`,
+      `https://powerful-tor-09724.herokuapp.com/user/subscription`,
       data1,
       {
         headers: {
@@ -28,7 +28,7 @@ export const getPayment = (data1) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/user/subscription`,
+      `https://powerful-tor-09724.herokuapp.com/user/subscription`,
       data1,
       {
         headers: {
@@ -50,7 +50,7 @@ export const razorpaySuccess = (data1) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/success`,
+      `https://powerful-tor-09724.herokuapp.com/success`,
       data1,
       {
         headers: {

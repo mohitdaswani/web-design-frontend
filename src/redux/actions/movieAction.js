@@ -12,7 +12,7 @@ export const getAllMovies = () => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/allMovies`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/allMovies`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -33,7 +33,7 @@ export const trendingMovies = () => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.token;
     const { data } = await Axios(
-      `https://powerful-temple-56540.herokuapp.com/movies/TrendingMovies`,
+      `https://powerful-tor-09724.herokuapp.com/movies/TrendingMovies`,
       {
         headers: {
           Accept: "application/json",
@@ -58,7 +58,7 @@ export const topRatedMovies = (page = 0, genre) => async (
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/movies/topRated`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/movies/topRated`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -79,7 +79,7 @@ export const fetchNetflixOriginals = () => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.token;
     const { data } = await Axios(
-      `https://powerful-temple-56540.herokuapp.com/movies/netflixOriginals`,
+      `https://powerful-tor-09724.herokuapp.com/movies/netflixOriginals`,
       {
         headers: {
           Accept: "application/json",
@@ -101,7 +101,7 @@ export const getMoviesByGenre = (genre) => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/movies/${genre}`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/movies/${genre}`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -121,7 +121,7 @@ export const getMoviesByLanguage = (language="hindi") => async (dispatch, getSta
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/movies/language/${language}`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/movies/language/${language}`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -141,7 +141,7 @@ export const getMovieDetail = (MovieId) => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/movie/${MovieId}`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/movie/${MovieId}`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -161,7 +161,7 @@ export const searchMovies = (name) => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios.get(`https://powerful-temple-56540.herokuapp.com/search?value=${name}`, {
+    const { data } = await Axios.get(`https://powerful-tor-09724.herokuapp.com/search?value=${name}`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -179,7 +179,7 @@ export const latestMovies = () => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios.get(`https://powerful-temple-56540.herokuapp.com/latest`, {
+    const { data } = await Axios.get(`https://powerful-tor-09724.herokuapp.com/latest`, {
       headers: {
         Accept: "application/json",
         Authorization: token,

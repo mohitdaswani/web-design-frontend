@@ -8,7 +8,7 @@ export const addMovie = (data1) => async (dispatch) => {
   try {
       console.log(data1)
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/admin/addMovie`,
+      `https://powerful-tor-09724.herokuapp.com/admin/addMovie`,
       data1,
       {
         headers: {
@@ -27,7 +27,7 @@ export const addMovie = (data1) => async (dispatch) => {
 export const logoutAdmin = () => async (dispatch,getState) => {
   try {
     const token = localStorage.getItem("admin");
-    const { data } = await Axios.delete(`https://powerful-temple-56540.herokuapp.com/admin/logout`, {
+    const { data } = await Axios.delete(`https://powerful-tor-09724.herokuapp.com/admin/logout`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -42,7 +42,7 @@ export const logoutAdmin = () => async (dispatch,getState) => {
 export const loginAdmin = (data1) => async (dispatch) => {
   try {
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/admin/login`,
+      `https://powerful-tor-09724.herokuapp.com/admin/login`,
       data1,
       {
         headers: {

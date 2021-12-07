@@ -54,6 +54,8 @@ console.log(this.props)
         <div className="boxstyle">
           <h1 style={{color:"white"}}>Sign In</h1>
           <br/>
+          <i class="fas fa-user-cog"></i>
+          <br />
           <br/>
           <Formik
             initialValues={{
@@ -65,17 +67,17 @@ console.log(this.props)
           >
             {({ errors, touched }) => (
               <Form style={{ display: "flex", flexDirection: "column",color:"coral" }}>
-                <Field style={{fontSize:"18px",padding:"10px"}} className="input" name="email" type="email" placeholder="Email"/>
+                <Field style={{fontSize:"18px",padding:"10px",background: "white", color: "black" }} className="input" name="email" type="email" placeholder="Email"/>
                 {errors.email && touched.email ? (
                   <p>{errors.email}</p>
                 ) : <br/>}
-                <br/>
-                <Field style={{fontSize:"18px",padding:"10px"}} name="password" type="password" placeholder="Password" />
+               
+                <Field style={{fontSize:"18px",padding:"10px",background: "white", color: "black" }} name="password" type="password" placeholder="Password" />
                 {errors.password && touched.password ? (
                   <p>{errors.password}</p>
                 ) : <br/>}
                 {this.state.error ? <p>{this.state.error}</p> : null}
-                <Button size="lg" color="danger" type="submit">Submit</Button>
+                <Button size="lg" style = {{ background: "#6495ED"}} type="submit">Submit</Button>
               </Form>
             )}
           </Formik>

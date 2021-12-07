@@ -16,7 +16,7 @@ import {
 export const registerUser = (data1) => async (dispatch) => {
   try {
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/user/register`,
+      `https://powerful-tor-09724.herokuapp.com/user/register`,
       data1,
       {
         headers: {
@@ -55,7 +55,7 @@ export const logoutUser = () => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.delete(
-      `https://powerful-temple-56540.herokuapp.com/user/logout`,
+      `https://powerful-tor-09724.herokuapp.com/user/logout`,
       {
         headers: {
           Accept: "application/json",
@@ -73,7 +73,7 @@ export const emailVerification = (token) => async (dispatch) => {
   try {
     console.log(token);
     const data = await Axios(
-      `https://powerful-temple-56540.herokuapp.com/user/verify/$${token}`
+      `https://powerful-tor-09724.herokuapp.com/user/verify/$${token}`
     );
     dispatch({ type: EMAIL_VERIFICATION, payload: data });
   } catch (err) {
@@ -84,7 +84,7 @@ export const forgotPasswordLink = (data1) => async (dispatch) => {
   try {
     console.log(data1);
     const { data } = await Axios.post(
-      `https://powerful-temple-56540.herokuapp.com/user/forgot_password`,
+      `https://powerful-tor-09724.herokuapp.com/user/forgot_password`,
       data1,
       {
         headers: {
@@ -106,7 +106,7 @@ export const ChangeforgotPassword = (data1, token) => async (
   try {
     console.log(data1, token);
     const { data } = await Axios.put(
-      `https://powerful-temple-56540.herokuapp.com/user/forgot_password/${token}`,
+      `https://powerful-tor-09724.herokuapp.com/user/forgot_password/${token}`,
       data1,
       {
         headers: {
@@ -128,7 +128,7 @@ export const ChangePassword = (data1) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.put(
-      `https://powerful-temple-56540.herokuapp.com/user/changePassword`,
+      `https://powerful-tor-09724.herokuapp.com/user/changePassword`,
       data1,
       {
         headers: {
@@ -153,7 +153,7 @@ export const changePhoneNo = (data1) => async (dispatch, getState) => {
     const token = user.user.token;
 
     const { data } = await Axios.put(
-      `https://powerful-temple-56540.herokuapp.com/user/changePhoneNumber`,
+      `https://powerful-tor-09724.herokuapp.com/user/changePhoneNumber`,
       data1,
       {
         headers: {
@@ -176,7 +176,7 @@ export const changeEmail = (data1) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.user.token;
     const { data } = await Axios.put(
-      `https://powerful-temple-56540.herokuapp.com/user/changeEmail`,
+      `https://powerful-tor-09724.herokuapp.com/user/changeEmail`,
       data1,
       {
         headers: {
@@ -195,7 +195,7 @@ export const changeEmail = (data1) => async (dispatch, getState) => {
 export const facebookLogin = (data1) => async (dispatch) => {
   try {
     console.log(data1)
-    const { data } = await Axios.post(`https://powerful-temple-56540.herokuapp.com/facebook`,data1, {
+    const { data } = await Axios.post(`https://powerful-tor-09724.herokuapp.com/facebook`,data1, {
       headers: {
         Accept:"application/json",
       }
@@ -210,7 +210,7 @@ export const facebookLogin = (data1) => async (dispatch) => {
 };
 export const googleLogin = (data1) => async (dispatch) => {
   try {
-    const { data } = await Axios.post(`https://powerful-temple-56540.herokuapp.com/google`,data1, {
+    const { data } = await Axios.post(`https://powerful-tor-09724.herokuapp.com/google`,data1, {
       headers: {
         Accept:"application/json",
       }
@@ -226,7 +226,7 @@ export const googleLogin = (data1) => async (dispatch) => {
 export const googleRecaptcha = (token) => async (dispatch) => {
   try {
     console.log(token)
-    const { data } = await Axios.post(`https://powerful-temple-56540.herokuapp.com/send`,{token}, {
+    const { data } = await Axios.post(`https://powerful-tor-09724.herokuapp.com/send`,{token}, {
       headers: {
         Accept:"application/json",
       }

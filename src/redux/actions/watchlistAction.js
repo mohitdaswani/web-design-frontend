@@ -7,7 +7,7 @@ export const getWatchlist = () => async (dispatch, getState) => {
     const userJSON = localStorage.getItem("user");
     const user = JSON.parse(userJSON);
     const token = user.token;
-    const { data } = await Axios(`https://powerful-temple-56540.herokuapp.com/user/watchlist`, {
+    const { data } = await Axios(`https://powerful-tor-09724.herokuapp.com/user/watchlist`, {
       headers: {
         Accept: "application/json",
         Authorization: token,
@@ -27,7 +27,7 @@ export const addToWatchlist = (movieId) => async (dispatch, getState) => {
     const user = JSON.parse(userJSON);
     const token = user.token;
     const { data } = await Axios(
-      `https://powerful-temple-56540.herokuapp.com/watchlist/${movieId}`,
+      `https://powerful-tor-09724.herokuapp.com/watchlist/${movieId}`,
       {
         headers: {
           Accept: "application/json",
