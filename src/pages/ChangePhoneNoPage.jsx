@@ -5,7 +5,7 @@ import "../styles/changePassword.css";
 import { connect } from "react-redux";
 import { changePhoneNo } from "../redux/actions/userActions";
 import { withRouter, Redirect } from "react-router-dom";
-import NetflixNav from "../components/iMoviesNav";
+import MoviesNav from "../components/MoviesNav";
 import { Button } from "reactstrap";
 import Footer from "../components/Footer";
 const phoneRegExp = /^(\+\d{1,3}[- ]?)?\d{10}$/;
@@ -54,7 +54,7 @@ class ChangePhoneNoPage extends Component {
     const user = JSON.parse(userJSON);
     return (
       <div>
-        <NetflixNav color="black" />
+        <MoviesNav color="black" />
         {!user ? (
           <Redirect to="/user/login" />
         ) : (

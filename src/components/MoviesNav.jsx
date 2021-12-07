@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/iMoviesNav.css";
+import "../styles/MoviesNav.css";
 import { NavLink, Link, withRouter } from "react-router-dom";
 import {
   Dropdown,
@@ -10,7 +10,7 @@ import {
 import { connect } from "react-redux";
 import { logoutUser } from "../redux/actions/userActions";
 import { searchMovies } from "../redux/actions/movieAction";
-const NetflixNav = ({ logoutUser, history, color, searchMovies }) => {
+const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
   const [show, handleShow] = useState();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
@@ -96,5 +96,5 @@ const NetflixNav = ({ logoutUser, history, color, searchMovies }) => {
 };
 
 export default connect(null, { logoutUser, searchMovies })(
-  withRouter(NetflixNav)
+  withRouter(MoviesNav)
 );

@@ -5,7 +5,7 @@ import "../styles/changePassword.css";
 import { connect } from "react-redux";
 import { changeEmail } from "../redux/actions/userActions";
 import { withRouter, Switch } from "react-router-dom";
-import NetflixNav from "../components/iMoviesNav";
+import MoviesNav from "../components/MoviesNav";
 import { Button } from "reactstrap";
 import Footer from "../components/Footer";
 
@@ -47,7 +47,7 @@ const ChangeEmailPage = ({ changeEmail, history }) => {
   const user = JSON.parse(userJSON);
   return (
     <div>
-      <NetflixNav color="black" />
+      <MoviesNav color="black" />
       {!user ? (
         <Switch to="/user/login" />
       ) : (

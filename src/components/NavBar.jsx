@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import "../styles/iMoviesNav.css";
+import "../styles/MoviesNav.css";
 import { logoutUser } from "../redux/actions/userActions";
 import { NavLink, withRouter } from "react-router-dom";
 import { Button } from "reactstrap";
