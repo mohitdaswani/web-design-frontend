@@ -9,6 +9,10 @@ import ForgotPasswordChange from "./pages/ForgotPasswordChange";
 import ChangePasswordPage from "./pages/ChangePasswordPage";
 import ChangePhoneNoPage from "./pages/ChangePhoneNoPage";
 import ChangeEmailPage from "./pages/ChangeEmailPage";
+
+// Krishna's addition
+import HomePage from './pages/HomePage';
+
 function App() {
   return (
     <div className="App">
@@ -26,6 +30,7 @@ function App() {
           path="/user/verify/:token"
           component={EmailVerificationPage}
         />
+        <Route exact path="/" component={HomePage}/>
         <Redirect to="/"/>
       </Switch>
     </div>

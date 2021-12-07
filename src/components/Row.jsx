@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Row.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Link, withRouter } from "react-router-dom";
 import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";

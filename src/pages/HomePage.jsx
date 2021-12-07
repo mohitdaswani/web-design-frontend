@@ -9,7 +9,7 @@ import {
   fetchNetflixOriginals,
 } from "../redux/actions/movieAction";
 import Banner from "../components/Banner";
-import NetflixNav from "../components/NetflixNav";
+import MoviesNav from "../components/MoviesNav";
 import { Redirect, withRouter } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import Footer from "../components/Footer";
@@ -50,7 +50,7 @@ class HomePage extends Component {
               backgroundColor: "rgb(0,0,0)",
             }}
           >
-            <NetflixNav />
+            <MoviesNav />
 
             {this.state.movies.length !== 0 ? (
               <>
