@@ -17,6 +17,8 @@ import AddProductPage from "./pages/AddProductPage";
 import LatestPage from "./pages/LatestPage";
 import MoviePlayerPage from "./pages/MoviePlayerPage";
 import MoviesPage from "./pages/MoviesPage";
+import MylistPage from "./pages/MylistPage";
+import RazorpayPage from './pages/RazorpayPage';
 
 function App() {
   return (
@@ -40,7 +42,9 @@ function App() {
         />
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/latest" component={LatestPage}/>
+        <Route exact path="/mylist" component={MylistPage}/>
         <Route exact path="/movies/:MovieId" component={MoviePlayerPage}/>
+        <Route exact path="/razorpay/:orderId" component={RazorpayPage}/>
         <Redirect to="/"/>
       </Switch>
     </div>
