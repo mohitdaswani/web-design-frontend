@@ -19,6 +19,8 @@ import MoviePlayerPage from "./pages/MoviePlayerPage";
 import MoviesPage from "./pages/MoviesPage";
 import MylistPage from "./pages/MylistPage";
 import RazorpayPage from './pages/RazorpayPage';
+import SearchPage from "./pages/SearchPage";
+import SubscriptionPlanPage from "./pages/SubscriptionPlanPage";
 
 function App() {
   return (
@@ -45,6 +47,8 @@ function App() {
         <Route exact path="/mylist" component={MylistPage}/>
         <Route exact path="/movies/:MovieId" component={MoviePlayerPage}/>
         <Route exact path="/razorpay/:orderId" component={RazorpayPage}/>
+        <Route exact path="/search" component={SearchPage}/>
+        <Route exact path="/subscriptionPlans" component={SubscriptionPlanPage}/>
         <Redirect to="/"/>
       </Switch>
     </div>
