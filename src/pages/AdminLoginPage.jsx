@@ -25,7 +25,7 @@ class AdminLoginPage extends Component {
   handleSubmit = async (data) => {
     const { email, password } = data;
     const obj = { email, password };
-
+console.log(this.props)
     const resp = await this.props.loginAdmin(obj);
     console.log(resp);
     if (resp.statusCode === 400) {

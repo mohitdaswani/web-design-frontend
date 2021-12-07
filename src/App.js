@@ -13,6 +13,7 @@ import ChangeEmailPage from "./pages/ChangeEmailPage";
 // Krishna's addition
 import HomePage from './pages/HomePage';
 import AdminLoginPage from "./pages/AdminLoginPage";
+import AddProductPage from "./pages/AddProductPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/user/register" component={RegisterPage} />
         <Route exact path="/user/Login" component={LoginPage} />
         <Route exact path="/admin/login" component={AdminLoginPage} />
+        <Route exact path="/admin/addMovie" component={AddProductPage} />
         <Route exact path="/user/forgotPassword" component={ForgotPasswordPage} />
         <Route exact path="/user/changePassword" component={ChangePasswordPage} />
         <Route exact path="/user/changePhoneNumber" component={ChangePhoneNoPage} />
