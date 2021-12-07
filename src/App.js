@@ -14,6 +14,7 @@ import ChangeEmailPage from "./pages/ChangeEmailPage";
 import HomePage from './pages/HomePage';
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AddProductPage from "./pages/AddProductPage";
+import LatestPage from "./pages/LatestPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           component={EmailVerificationPage}
         />
         <Route exact path="/" component={HomePage}/>
+        <Route exact path="/latest" component={LatestPage}/>
         <Redirect to="/"/>
       </Switch>
     </div>
