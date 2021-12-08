@@ -28,9 +28,9 @@ history.push("")
         <div className="banner_buttons">
          <Link to={`movies/${movie._id} `}> <button className="banner_button" >Play</button></Link>
           <Link to="/mylist"><button className="banner_button">My list</button></Link>
-          <div className="banner_description">
+          {/* <div className="banner_description">
             {truncate(movie?.title, 150)}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="banner_fadeBottom"/>

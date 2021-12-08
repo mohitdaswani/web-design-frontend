@@ -14,7 +14,7 @@ import {
 import { Redirect } from "react-router-dom";
 const MoviesPage = ({ getMoviesByLanguage }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [Language, setLanguage] = useState();
+  const [Language, setLanguage] = useState("english");
   const toggle = () => setDropdownOpen((prevState) => !prevState);
   const handleEnglishLanguage = (e) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ const MoviesPage = ({ getMoviesByLanguage }) => {
   const handleHindiLanguage = (e) => {
     setLanguage(e.target.value);
   };
+  console.log(getMoviesByLanguage)
   const extrastyle = {
     margin: "20px",
     background: "black",

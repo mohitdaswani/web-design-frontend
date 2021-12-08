@@ -23,6 +23,7 @@ const Row = ({
   const [Movies, setmovies] = useState([]);
   const [MovieDetail, setmovieDetail] = useState();
   const [perView, setperView] = useState(0);
+  console.log(genre)
   useEffect(() => {
     // const Perview=(screenSize)=>{
     //   if (screenSize <= 500) {
@@ -38,6 +39,7 @@ const Row = ({
     //   Perview(document.body.clientWidth)
     const fetchMovies = async () => {
       const response = await moviesURL(genre);
+      console.log("Asda",response)
       if (response) {
         if (response.statusCode === 201) {
           setmovies(response.movies);

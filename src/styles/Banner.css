@@ -10,7 +10,7 @@
   margin-left: 30px;
 }
 .banner_title {
-  font-size: 3rem;
+  font-size: 100px;
   font-weight: 800;
   padding-bottom: 0.3rem;
 }
@@ -33,6 +33,7 @@
   color: #fff;
   outline: none;
   border: none;
+  margin-left: 20px;
   font-weight: 700;
   border-radius: 0.2vw;
   padding: 0.5rem 2rem;

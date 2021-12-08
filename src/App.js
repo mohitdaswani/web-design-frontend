@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/search" component={SearchPage}/>
         <Route exact path="/subscriptionPlans" component={SubscriptionPlanPage}/>
         <Route exact path="/yourAccount" component={AccountPage}/>
-        <Redirect to="/"/>
+        {/* <Redirect to="/"/> */}
       </Switch>
     </div>
   );
