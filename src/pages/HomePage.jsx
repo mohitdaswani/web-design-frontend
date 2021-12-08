@@ -113,10 +113,10 @@ class HomePage extends Component {
                   style={{
                     width: "200px",
                     position: "relative",
-                    top: "150px",
+                    top: "220px",
                     objectFit: "contain",
                   }}
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
+                  src="https://i.pinimg.com/originals/66/dc/76/66dc7687b078fce1a5239985b1f0b1c8.gif"
                   alt="Netflix logo"
                 />
                 <Spinner

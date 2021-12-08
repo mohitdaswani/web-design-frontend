@@ -39,28 +39,29 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
       
       <img
         className="nav_logo"
-        // src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
-        alt="Netflix logo"
+        src="https://i.pinimg.com/originals/66/dc/76/66dc7687b078fce1a5239985b1f0b1c8.gif"
+        alt="Movie logo"
       />
+      
       <div style={{ display: "flex", marginLeft: "140px" }}>
         <p>
           <NavLink className="navlinkStyle" to="/">
-            Home
+          <i class="fas fa-home"></i> Home
           </NavLink>
         </p>
         <p>
           <NavLink className="navlinkStyle" to="/movies/language">
-            Movies
+          <i class="fas fa-film"></i> Movies
           </NavLink>
         </p>
         <p>
           <NavLink className="navlinkStyle" to="/mylist">
-            My List
+          <i class="fas fa-list"></i> My List
           </NavLink>
         </p>
         <p>
           <NavLink className="navlinkStyle" to="/latest">
-            Latest
+          <i class="fas fa-tv"></i>Latest
           </NavLink>
         </p>
       </div>
@@ -80,7 +81,9 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
           <DropdownToggle
             style={{ background: "transparent",border:"black" }}
             caret
-          ></DropdownToggle>
+          >
+            Account
+          </DropdownToggle>
           <DropdownMenu>
             <DropdownItem>
               <Link to="/yourAccount">Account </Link>
