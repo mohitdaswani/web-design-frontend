@@ -42,7 +42,7 @@ const NavBar = ({ logoutUser,logoutAdmin, history,extrastyle }) => {
           className="ButtonStyle"
           onClick={handleLogout}
         >
-          Sign Out
+          <i class="fas fa-sign-out-alt"></i> <span style={{color: "whitesmoke"}}>Sign Out</span>
         </Button>
       ) : null}
     </div>

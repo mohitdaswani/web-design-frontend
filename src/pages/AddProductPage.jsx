@@ -80,9 +80,8 @@ if(response){
 
   render() {
     const style={
-      // background:"white",
-      // height: "20px"
-    
+      background:"black",
+      height: "70px"
     }
     const admin = localStorage.getItem("admin");
     return (
@@ -96,7 +95,8 @@ if(response){
             <div id="admin-bg">
 
             <div id="container">
-              <h1 style={{margin: "60px 0 30px 0", padding: "40px 20px "}}>Add Movie Details</h1>
+              <h1 style={{margin: "60px 0 10px 0", padding: "40px 20px "}}>Add Movie Details</h1>
+              <hr />
               <h4 style={{ paddingTop: "30px"}}>Name</h4>
               <input 
                 onChange={this.handleChange}
