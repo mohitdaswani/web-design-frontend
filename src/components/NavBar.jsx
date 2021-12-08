@@ -34,18 +34,11 @@ const NavBar = ({ logoutUser,logoutAdmin, history,extrastyle }) => {
       className={`nav`}
       style={{ display: "flex", justifyContent: "flex-end", ...extrastyle}}
     >
-      {/* <img
-        style={{ width: "150px" }}
-        className="nav_logo"
-        // src="https://cdn.dribbble.com/users/5926297/screenshots/14065311/imovie_final_4x.jpg"
-        // src = "http://www.clker.com/cliparts/s/7/y/E/y/T/clap-film-movie.svg.med.png"
-        alt="Movie logo"
-      /> */}
       {(user||admin)
        ? (
         <Button
           color="link"
-          style={{ color: "white", fontSize: "25px" }}
+          style={{ color: "black", fontSize: "25px" }}
           className="ButtonStyle"
           onClick={handleLogout}
         >

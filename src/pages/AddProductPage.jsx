@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { addMovie } from "../redux/actions/adminAction";
 import { withRouter, Redirect } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import "../styles/adminForm.css";
+
 class AddProductPage extends Component {
   state = {
     response: false,
@@ -78,8 +80,9 @@ if(response){
 
   render() {
     const style={
-      background:"black",
-      height:"70px"
+      // background:"white",
+      // height: "20px"
+    
     }
     const admin = localStorage.getItem("admin");
     return (
@@ -89,203 +92,223 @@ if(response){
         <NavBar extrastyle={style} />
 
         {this.state.status!=="uploaded" ? (
-          <div style={{ margin: "60px", color: "white" }}>
-            <div style = {{float: "left"}}>
-            <h2>Name</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.MovieName}
-              type="text"
-              name="MovieName"
-              // required
-            />
-            <h2>Title</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.title}
-              type="text"
-              name="title"
-              // required
-            />
-            <h2>description</h2>
-            <textarea
-              onChange={this.handleChange}
-              value={this.state.description}
-              name="description"
-              // required
-              rows="4"
-              cols="50"
-            ></textarea>
-            <br />
-            <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
-              languages
-            </label>
-            <select
-              onChange={this.handleChange}
-              value={this.state.language}
-              className="custom-select mr-sm-2"
-              name="language"
-              // required
-              id="inlineFormCustomSelect"
-            >
-              <option defaultValue>Choose...</option>
-              <option value="english">English</option>
-              <option value="hindi">Hindi</option>
-              <option value="chhattisgarhi">Chhattisgarhi</option>
-            </select>
-            <h2>poster image</h2>
-            <input style={{height:"25px"}}
-              onChange={this.handleChange}
-              // value={this.state.posterImage}
-              type="file"
-              // required
-              // type="text"
-              name="posterImage"
-            />
-            <h2>background image</h2>
-            <input style={{height:"25px"}}
-              onChange={this.handleChange}
-              
-              // value={this.state.posterImage}
-              type="file"
-              // required
-              // type="text"
-              name="backgroundImage"
-            />
-            <div>
+          <div style={{ margin: "auto", background: "#36486b"}}>
+            <div id="admin-bg">
+
+            <div id="container">
+              <h1 style={{margin: "60px 0 30px 0", padding: "40px 20px "}}>Add Movie Details</h1>
+              <h4 style={{ paddingTop: "30px"}}>Name</h4>
               <input 
                 onChange={this.handleChange}
-                value={this.state.isReleased}
-                type="checkbox"
-                name="isReleased"
+                value={this.state.MovieName}
+                type="text"
+                name="MovieName"
+                class="box-style"
+                // required
               />
-              <label htmlFor="isReleased">isReleased</label>
-            </div>
-            <h2>movie</h2>
-            <input style={{height:"25px"}}
-              onChange={this.handleChange}
-              // value={this.state.movie}
-              type="file"
-              // type="text"
-              // required
-              name="movie"
-            />
-            <h2>date</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.releasedDate}
-              type="date"
-              id="start"
-              // required
-              name="releasedDate"
-              min="2018-01-01"
-              max="2021-12-31"
-            />
-            <div>
+              <h4>Title</h4>
               <input 
                 onChange={this.handleChange}
-                value={this.state.isAdult}
-                type="checkbox"
-                name="isAdult"
+                value={this.state.title}
+                type="text"
+                name="title"
+                class="box-style"
+                // required
               />
-              <label htmlFor="isAdult">isAdult</label>
-            </div>
-            <div>
-              <input 
+              <h4>Description</h4>
+              <textarea
                 onChange={this.handleChange}
-                value={this.state.isPaid}
-                type="checkbox"
-                name="isPaid"
-              />
-              <label htmlFor="isPaid">isPaid</label>
-            </div>
-            <h2>rating</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.rating}
-              type="number"
-              // required
-              name="rating"
-              // required
-            />
-            <h2>runTime</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.runTime}
-              type="number"
-              name="runTime"
-              // required
-            />
-            <h2>country</h2>
-            <input 
-              onChange={this.handleChange}
-              value={this.state.country}
-              type="text"
-              name="country"
-              // required
-            />
-            <br />
-            <div style={{ display: "flex" }}>
+                value={this.state.description}
+                name="description"
+                // required
+                rows="3"
+                cols="30"
+                class="box-style"
+              ></textarea>
+              <br />< br />
               <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
-                genre
+                <h4>Languages</h4>
               </label>
+              <select
+                onChange={this.handleChange}
+                value={this.state.language}
+                className="custom-select mr-sm-2"
+                name="language"
+                // required
+                class="box-style"
+                id="inlineFormCustomSelect"
+              >
+                <option defaultValue>Choose Language</option>
+                <option value="english">English</option>
+                <option value="hindi">Hindi</option>
+              </select>
+              <br /><br />
+              <h4>Poster Image</h4>
+              <input
+                onChange={this.handleChange}
+                // value={this.state.posterImage}
+                type="file"
+                // required
+                // type="text"
+                class="box-style"
+                name="posterImage"
+              />
+              <h4>Background Image</h4>
+              <input
+                onChange={this.handleChange}
+                
+                // value={this.state.posterImage}
+                type="file"
+                // required
+                // type="text"
+                class="box-style"
+                name="backgroundImage"
+              />
               <div>
+              <h4>Release Status</h4>
                 <input 
                   onChange={this.handleChange}
-                  value={this.state.Action}
+                  value={this.state.isReleased}
                   type="checkbox"
-                  name="Action"
+                  name="isReleased"
                 />
-                <label htmlFor="Action">Action</label>
+                <label htmlFor="isReleased">isReleased</label>
+              </div>
+              <h4>Movie</h4>
+              <input
+                onChange={this.handleChange}
+                // value={this.state.movie}
+                type="file"
+                // type="text"
+                // required
+                class="box-style"
+                name="movie"
+              />
+              <h4>Date</h4>
+              <input 
+                onChange={this.handleChange}
+                value={this.state.releasedDate}
+                type="date"
+                id="start"
+                class="box-style"
+                // required
+                name="releasedDate"
+                min="2018-01-01"
+                max="2021-12-31"
+              />
+              <div>
+                <h4>Movie Type</h4>
+                <input 
+                  onChange={this.handleChange}
+                  value={this.state.isAdult}
+                  type="checkbox"
+                  name="isAdult"
+                />
+                <label htmlFor="isAdult">isAdult</label>
               </div>
               <div>
                 <input 
                   onChange={this.handleChange}
-                  value={this.state.Adventure}
+                  value={this.state.isPaid}
                   type="checkbox"
-                  name="Adventure"
+                  name="isPaid"
                 />
-                <label htmlFor="Adventure">Adventure</label>
+                <label htmlFor="isPaid">isPaid</label>
               </div>
-              <div>
-                <input 
-                  onChange={this.handleChange}
-                  value={this.state.Comedy}
-                  type="checkbox"
-                  name="Comedy"
-                />
-                <label htmlFor="Comedy">Comedy</label>
+              <h4>Rating</h4>
+              <input 
+                onChange={this.handleChange}
+                value={this.state.rating}
+                type="number"
+                // required
+                name="rating"
+                class="box-style"
+                // required
+              />
+              <h4>Run Time</h4>
+              <input 
+                onChange={this.handleChange}
+                value={this.state.runTime}
+                type="number"
+                name="runTime"
+                class="box-style"
+                // required
+              />
+              <h4>Country</h4>
+              <input 
+                onChange={this.handleChange}
+                value={this.state.country}
+                type="text"
+                name="country"
+                class="box-style"
+                // required
+              />
+              <br /><br />
+              <div style={{textAlign:"center" }}>
+                <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
+                  <h4>Genre</h4>
+                </label>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Action}
+                    type="checkbox"
+                    name="Action"
+                  />
+                  <label htmlFor="Action">Action</label>
+                </div>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Adventure}
+                    type="checkbox"
+                    name="Adventure"
+                  />
+                  <label htmlFor="Adventure">Adventure</label>
+                </div>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Comedy}
+                    type="checkbox"
+                    name="Comedy"
+                  />
+                  <label htmlFor="Comedy">Comedy</label>
+                </div>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Drama}
+                    type="checkbox"
+                    name="Drama"
+                  />
+                  <label htmlFor="Drama">Drama</label>
+                </div>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Horror}
+                    type="checkbox"
+                    name="Horror"
+                  />
+                  <label htmlFor="Horror">Horror</label>
+                </div>
+                <div>
+                  <input 
+                    onChange={this.handleChange}
+                    value={this.state.Thriller}
+                    type="checkbox"
+                    name="Thriller"
+                  />
+                  <label htmlFor="Thriller">Thriller</label>
+                </div>
               </div>
-              <div>
-                <input 
-                  onChange={this.handleChange}
-                  value={this.state.Drama}
-                  type="checkbox"
-                  name="Drama"
-                />
-                <label htmlFor="Drama">Drama</label>
+              <br /><br />
+              <input  type="submit" onClick={this.handleSubmit} value="submit" style = {{ background: "#6495ED", marginBottom: "60px", width:"10em"}} />
               </div>
-              <div>
-                <input 
-                  onChange={this.handleChange}
-                  value={this.state.Horror}
-                  type="checkbox"
-                  name="Horror"
-                />
-                <label htmlFor="Horror">Horror</label>
-              </div>
-              <div>
-                <input 
-                  onChange={this.handleChange}
-                  value={this.state.Thriller}
-                  type="checkbox"
-                  name="Thriller"
-                />
-                <label htmlFor="Thriller">Thriller</label>
-              </div>
+            
             </div>
-            <input  type="submit" onClick={this.handleSubmit} value="submit" />
-            </div>
+            
           </div>):<h1>uploaded...</h1>}
 </>
         : (
