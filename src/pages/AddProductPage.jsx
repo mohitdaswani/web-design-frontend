@@ -77,7 +77,7 @@ if(response){
   }
 }
   };
-
+// checked file type and working on windows for choosefile
   render() {
     const style={
       background:"black",
