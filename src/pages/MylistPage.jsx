@@ -1,5 +1,5 @@
 import React from "react";
-import Row from "../components/Row";
+import Row from "../components/RowMylist";
 import { getWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
 import "../styles/listPage.css";
