@@ -100,7 +100,8 @@ class LoginPage extends Component {
           <h1 style={{ color: "white" }}>Sign In</h1>
           <br />
           
-          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          {/* <i class="fa fa-sign-in" aria-hidden="true"></i> */}
+          <i class="fas fa-user"></i>
           
           <br />
           <br />

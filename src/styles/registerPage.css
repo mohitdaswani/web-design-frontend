@@ -1,7 +1,6 @@
 .boxstyle {
   width: 383px;
   background: whitesmoke;
-  padding: 40px;
   position: relative;
   top: 60px;
 
@@ -10,7 +9,8 @@
   margin: auto auto;
   padding: 40px;
   border-radius: 5px;
-  box-shadow: 0 0 10px #000;
+  /* box-shadow: 0 0 10px #000; */
+  box-shadow: 0 0 10px rgb(241, 238, 238);
 }
 input {
   height: 45px;
@@ -78,5 +78,8 @@ textarea {
     border-radius: 5px;
     box-shadow: 0 0 10px #000;
   
+  }
+  .rc-anchor-normal{
+    width: 200px;
   }
 }

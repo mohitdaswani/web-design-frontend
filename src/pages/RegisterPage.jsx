@@ -156,11 +156,9 @@ class RegisterPage extends Component {
                   ) : (
                     <br />
                   )}
-                  <br />
                   <ReCAPTCHA
                     sitekey="6LfuVsQZAAAAALI9jf2zXxAVR7pOxSzs45NAEj_f"
                     onChange={this.onChange}
-                    
                   />
                   
                   <br />
