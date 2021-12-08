@@ -93,16 +93,15 @@ class LoginPage extends Component {
       color: "white",
     };
     return (
-     
       <div className="pageLayout">
         <NavBar />
         <div className="boxstyle">
           <h1 style={{ color: "white" }}>Sign In</h1>
           <br />
-          
+
           {/* <i class="fa fa-sign-in" aria-hidden="true"></i> */}
           <i class="fas fa-user"></i>
-          
+
           <br />
           <br />
           <Formik
@@ -122,16 +121,26 @@ class LoginPage extends Component {
                 }}
               >
                 <Field
-                  style={{ fontSize: "18px", padding: "10px", background: "white", color: "black"}}
+                  style={{
+                    fontSize: "18px",
+                    padding: "10px",
+                    background: "white",
+                    color: "black",
+                  }}
                   className="input"
                   name="email"
                   type="email"
                   placeholder="Email"
                 />
                 {errors.email && touched.email ? <p>{errors.email}</p> : <br />}
-               
+
                 <Field
-                  style={{ fontSize: "18px", padding: "10px", background: "white", color: "black" }}
+                  style={{
+                    fontSize: "18px",
+                    padding: "10px",
+                    background: "white",
+                    color: "black",
+                  }}
                   name="password"
                   type="password"
                   placeholder="Password"
@@ -144,7 +153,7 @@ class LoginPage extends Component {
                 {this.state.error ? <p>{this.state.error}</p> : null}
                 <Button
                   size="lg"
-                  style = {{ background: "#6495ED"}}
+                  style={{ background: "#6495ED" }}
                   type="submit"
                 >
                   Sign In
@@ -158,7 +167,7 @@ class LoginPage extends Component {
               marginTop: "5px",
               float: "right",
               fontSize: "13px",
-              color: "#F8F8FF"
+              color: "#F8F8FF",
             }}
           >
             <span>forgot password?</span>
@@ -167,14 +176,14 @@ class LoginPage extends Component {
           <br />
           <br />
           <FacebookLogin
-            appId="908576282981444"
+            appId="423058305969570"
             // autoLoad={true}
             fields="name,email,picture"
             onClick={this.componentClicked}
             callback={this.responseFacebook}
-            render={(renderProps) => (
+            render={renderProps => (
               <button
-              className="thirdpartyLogin"  
+                className="thirdpartyLogin"
                 style={{
                   color: "#F8F8FF",
                   background: "transparent",
@@ -194,11 +203,11 @@ class LoginPage extends Component {
           />
           <br />
           <GoogleLogin
-            clientId="749284168506-lc5t8hml4japl89fpmti3lfsu9mpm32u.apps.googleusercontent.com"
+            clientId="757722038294-71lll9r2ckdbpskfdnq8v0d7i8r94u22.apps.googleusercontent.com"
             buttonText="Login"
-            render={(renderProps) => (
+            render={renderProps => (
               <button
-              className="thirdpartyLogin"
+                className="thirdpartyLogin"
                 style={{
                   color: "#F8F8FF",
                   background: "transparent",

@@ -25,13 +25,16 @@ class SubscriptionPlanPage extends Component {
   };
   handleClick = async (e) => {
     e.preventDefault();
+    console.log(e.target.value)
     if (e.target.value === "Annually") {
       const response = await this.props.getSubscription(this.state.items[1]);
+      console.log(response)
       if(response.hasOwnProperty("order")){
       this.props.history.push(`/razorpay/${response.order.order_id}`)
     }}
     else{
       const response = await this.props.getSubscription(this.state.items[0]);
+      console.log(response,"ASda")
       if(response.hasOwnProperty("order")){
         this.props.history.push(`/razorpay/${response.order.order_id}`)
           }

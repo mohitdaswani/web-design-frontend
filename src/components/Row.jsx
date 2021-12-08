@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Row.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { Link, withRouter } from "react-router-dom";
 import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
@@ -23,7 +24,6 @@ const Row = ({
   const [Movies, setmovies] = useState([]);
   const [MovieDetail, setmovieDetail] = useState();
   const [perView, setperView] = useState(0);
-  console.log(genre)
   useEffect(() => {
     // const Perview=(screenSize)=>{
     //   if (screenSize <= 500) {
@@ -39,7 +39,6 @@ const Row = ({
     //   Perview(document.body.clientWidth)
     const fetchMovies = async () => {
       const response = await moviesURL(genre);
-      console.log("Asda",response)
       if (response) {
         if (response.statusCode === 201) {
           setmovies(response.movies);
@@ -49,19 +48,19 @@ const Row = ({
     fetchMovies();
   }, [genre]);
 
-  const handlePopup = (e) => {
+  const handlePopup = e => {
     e.preventDefault();
     const movie = JSON.parse(e.target.value);
     setmovieDetail(movie);
   };
-  const handleRemoveWatchlist = async (e) => {
+  const handleRemoveWatchlist = async e => {
     e.preventDefault();
     const response = await addToWatchlist(e.target.value);
     if (response.statusCode === 201) {
       window.location.reload(false);
     }
   };
-  const handleAddWatchlist = async (e) => {
+  const handleAddWatchlist = async e => {
     e.preventDefault();
     await addToWatchlist(e.target.value);
   };
@@ -74,21 +73,20 @@ const Row = ({
           style={{ padding: "20px 0px" }}
           spaceBetween={0}
           id="main"
-          slidesPerGroup={Math.floor((document.body.clientWidth/320))}
-          slidesPerView={Math.floor((document.body.clientWidth/320))}
+          slidesPerGroup={Math.floor(document.body.clientWidth / 320)}
+          slidesPerView={Math.floor(document.body.clientWidth / 320)}
           navigation
           scrollbar={{ draggable: true }}
-
         >
           {Movies ? (
-            Movies.map((movie) => (
+            Movies.map(movie => (
               <SwiperSlide style={{ width: "25%" }} key={movie._id}>
                 <div
                   key={movie._id}
                   className="container"
                   style={{ margin: "0px 7px" }}
                 >
-                  <Link to={`${movie._id} `}>
+                  <Link to={`movies/${movie._id} `}>
                     <img
                       src={`https://${
                         isLargeRow ? movie.posterImage : movie.backgroundImage
@@ -99,48 +97,49 @@ const Row = ({
                       alt={movie.MovieName}
                     />
                   </Link>
-                  <div style={{position:"absolute"}}>
-                  <div className="title" style={{ marginTop: "-115px" }}>
-                    <h4 style={{width:"150px"}}>{movie.MovieName}</h4>
-                    <p className="popup_title" style={{ fontSize: "12px" }}>
-                      {movie.isAdult ? "A" : "U/A"} {movie.runTime}min
-                    </p>
-                    <p className="popup_title" style={{ fontSize: "12px",marginTop:"-10px" }}>
-                      #{movie?.rating} in Imdb
-                    </p>
-                  </div>
-                  <hr />
-                  <button
-                  style={{outline:"transparent"}}
-                    className={`popup ${
-                      Movies.length <= 3 && "shortrowDetail"
-                    }`}
-                    value={JSON.stringify(movie)}
-                    onClick={handlePopup}
-                  />
-                  {list ? (
+                  <div style={{ position: "absolute" }}>
+                    <div className="title" style={{ marginTop: "-115px" }}>
+                      <h4 style={{ width: "150px" }}>{movie.MovieName}</h4>
+                      <p className="popup_title" style={{ fontSize: "12px" }}>
+                        {movie.isAdult ? "A" : "U/A"} {movie.runTime}min
+                      </p>
+                      <p
+                        className="popup_title"
+                        style={{ fontSize: "12px", marginTop: "-10px" }}
+                      >
+                        #{movie?.rating} in Imdb
+                      </p>
+                    </div>
+                    <hr />
                     <button
-                    style={{outline:"transparent"}}
-
-                      className={`removeMylist ${
-                        Movies.length <= 3 && "shortrow"
+                      style={{ outline: "transparent" }}
+                      className={`popup ${
+                        Movies.length <= 3 && "shortrowDetail"
                       }`}
-                      value={movie._id}
-                      title="Remove from my list"
-                      onClick={handleRemoveWatchlist}
+                      value={JSON.stringify(movie)}
+                      onClick={handlePopup}
                     />
-                  ) : (
-                    <button
-                    style={{outline:"transparent"}}
-
-                      className={`addToWatchlist ${
-                        Movies.length <= 3 && "shortrow"
-                      }`}
-                      value={movie._id}
-                      title="Add to my list"
-                      onClick={handleAddWatchlist}
-                    />
-                  )}
+                    {list ? (
+                      <button
+                        style={{ outline: "transparent" }}
+                        className={`removeMylist ${
+                          Movies.length <= 3 && "shortrow"
+                        }`}
+                        value={movie._id}
+                        title="Remove from my list"
+                        onClick={handleRemoveWatchlist}
+                      />
+                    ) : (
+                      <button
+                        style={{ outline: "transparent" }}
+                        className={`addToWatchlist ${
+                          Movies.length <= 3 && "shortrow"
+                        }`}
+                        value={movie._id}
+                        title="Add to my list"
+                        onClick={handleAddWatchlist}
+                      />
+                    )}
                   </div>
                 </div>
               </SwiperSlide>

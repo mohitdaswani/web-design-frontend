@@ -27,30 +27,71 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        
         <Route exact path="/user/register" component={RegisterPage} />
-        <Route exact path="/movies/language/" component={MoviesPage}/>
+        <Route exact path="/movies/language/" component={MoviesPage} />
         <Route exact path="/user/Login" component={LoginPage} />
         <Route exact path="/admin/login" component={AdminLoginPage} />
         <Route exact path="/admin/addMovie" component={AddProductPage} />
-        <Route exact path="/user/forgotPassword" component={ForgotPasswordPage} />
-        <Route exact path="/user/changePassword" component={ChangePasswordPage} />
-        <Route exact path="/user/changePhoneNumber" component={ChangePhoneNoPage} />
+        <Route
+          exact
+          path="/user/forgotPassword"
+          component={ForgotPasswordPage}
+        />
+        <Route
+          exact
+          path="/user/changePassword"
+          component={ChangePasswordPage}
+        />
+        <Route
+          exact
+          path="/user/changePhoneNumber"
+          component={ChangePhoneNoPage}
+        />
         <Route exact path="/user/changeEmail" component={ChangeEmailPage} />
-        <Route exact path="/user/forgot_password/:token" component={ForgotPasswordChange} />
+        <Route
+          exact
+          path="/user/forgot_password/:token"
+          component={ForgotPasswordChange}
+        />
         <Route
           exact
           path="/user/verify/:token"
           component={EmailVerificationPage}
         />
-        <Route exact path="/" component={HomePage}/>
-        <Route exact path="/latest" component={LatestPage}/>
-        <Route exact path="/mylist" component={MylistPage}/>
-        <Route exact path="/movies/:MovieId" component={MoviePlayerPage}/>
-        <Route exact path="/razorpay/:orderId" component={RazorpayPage}/>
-        <Route exact path="/search" component={SearchPage}/>
-        <Route exact path="/subscriptionPlans" component={SubscriptionPlanPage}/>
-        <Route exact path="/yourAccount" component={AccountPage}/>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/latest" component={LatestPage} />
+        <Route exact path="/mylist" component={MylistPage} />
+        <Route exact path="/movies/:MovieId" component={MoviePlayerPage} />
+        <Route
+         
+         
+         
+         
+          exact
+        
+        
+        
+        
+              path="/movies/movies/:MovieId"
+        
+        
+        
+        
+              component={MoviePlayerPage}
+       
+       
+       
+       
+        />
+
+        <Route exact path="/razorpay/:orderId" component={RazorpayPage} />
+        <Route exact path="/search" component={SearchPage} />
+        <Route
+          exact
+          path="/subscriptionPlans"
+          component={SubscriptionPlanPage}
+        />
+        <Route exact path="/yourAccount" component={AccountPage} />
         {/* <Redirect to="/"/> */}
       </Switch>
     </div>
