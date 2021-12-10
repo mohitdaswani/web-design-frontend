@@ -18,14 +18,21 @@
 }
 .videopage:hover .back_button {
   opacity: 1;
-  transition: all 800ms;
+  transition: all 2000ms;
 }
+
 .back_button {
   background: transparent;
   font-size: 40px;
   color: white;
-  height: 0px;
+  height: 10px;
   width: 50px;
   opacity: 0;
   border: transparent;
+  display: none;
+}
+
+.button:hover {
+  display: inline-block;
+  transition: 2000ms ease-out;
 }

@@ -3,6 +3,8 @@ import { withRouter, Redirect, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import "../styles/videoplayer.css";
 import { getMovieDetail } from "../redux/actions/movieAction";
+import { MdCancel} from 'react-icons/md';
+
 const MoviePlayerPage = ({ getMovieDetail, match }) => {
   const [movie, setmovie] = useState();
   const [error, seterror] = useState();
@@ -51,11 +53,11 @@ const MoviePlayerPage = ({ getMovieDetail, match }) => {
                 </video>
               ) : null}
               <button
-                style={{ outline: "transparent" }}
+                style={{ outline: "transparent", display: "block" }}
                 className="back_button"
                 onClick={() => history.goBack()}
               >
-                x
+                <MdCancel/>
               </button>
             </div>
           ) : (
