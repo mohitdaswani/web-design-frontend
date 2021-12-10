@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { loginAdmin} from "../redux/actions/adminAction";
 import NavBar from "../components/NavBar";
 import { Button } from "reactstrap";
+
 const loginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Please enter a valid email address."),
   password: Yup.string()
@@ -36,7 +37,8 @@ console.log(this.props)
       this.setState({ error: resp.error });
     } else if (resp.statusCode === 201) {
         await localStorage.setItem("admin",resp.token)
-      this.props.history.push("/admin/addMovie");
+        this.props.history.push("/admin/adminDashboard");
+      //this.props.history.push("/admin/addMovie");
     }
   };
 
