@@ -23,6 +23,7 @@ import RazorpayPage from "./pages/RazorpayPage";
 import SearchPage from "./pages/SearchPage";
 import SubscriptionPlanPage from "./pages/SubscriptionPlanPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
+import DeleteMoviePage from "./pages/DeleteMoviePage";
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
         <Route exact path="/admin/login" component={AdminLoginPage} />
         <Route exact path="/admin/addMovie" component={AddProductPage} />
         <Route exact path="/admin/adminDashboard" component={AdminDashboardPage} />
+        <Route exact path="/admin/deleteMovie" component={DeleteMoviePage} />
+        <Route
+          exact
+          path="/admin/adminDashboard"
+          component={AdminDashboardPage}
+        />
         <Route
           exact
           path="/user/forgotPassword"
