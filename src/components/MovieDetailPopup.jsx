@@ -3,7 +3,7 @@ import "../styles/MovieDetailPopup.css";
 import { withRouter, Link } from "react-router-dom";
 import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
-import { GiCancel } from "react-icons/gi";
+import { MdCancel } from "react-icons/md";
 
 const MovieDetailPopup = ({ movie, addToWatchlist }) => {
   const [Popup, setPopup] = useState(false);
@@ -60,7 +60,7 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
             }}
             onClick={handleClick}
           >
-            <GiCancel/>
+            <MdCancel style={{color: "#C41E3A", width: "30px", marginTop: "-10px"}}/>
           </button>
           <div className="popup_content">
             <h1 className="popup_title">{movie?.MovieName}</h1>
@@ -70,18 +70,19 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
             <h3 className="popup_title" style={{ fontSize: "25px" }}>
               #{movie?.rating} in Imdb
             </h3>
-            <div className="popup_description">{movie?.title}</div>
+            <div  className="popup_description">{movie?.title}</div>
             <div className="popup_buttons">
               <Link to={`movies/${movie._id} `}>
                 <button className="popup_button">Play</button>
               </Link>
-              <button
+          <button className="banner_button" value={movie._id} onClick={handleAddtoMylist}> + My list</button>
+              {/* <button
                 className="popup_button"
                 value={movie._id}
                 onClick={handleAddtoMylist}
               >
                 + My list
-              </button>
+              </button> */}
               <div className="popup_description">{movie?.description}</div>
               <div
                 className="popup_description"
