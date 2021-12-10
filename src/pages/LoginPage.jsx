@@ -203,7 +203,7 @@ class LoginPage extends Component {
           />
           <br />
           <GoogleLogin
-            clientId="757722038294-71lll9r2ckdbpskfdnq8v0d7i8r94u22.apps.googleusercontent.com"
+            clientId="757722038294-ijetgm03mvett7s9f9rsshmlehn0ulgc.apps.googleusercontent.com"
             buttonText="Login"
             render={renderProps => (
               <button

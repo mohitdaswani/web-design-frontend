@@ -12,8 +12,7 @@ export const getSubscription = (data1) => async (dispatch, getState) => {
       {
         headers: {
           Accept: "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjBmNTRmOTk4OTRjMDAxNjkzZmVlYSIsImlhdCI6MTYzODk4NzEwNywiZXhwIjoxNjQxNTc5MTA3fQ.W1mHFWQe35JN_7Pki3KUqfh-FCu5IgIOmy_5esh98L0",
+          Authorization: token,
         },
       }
     );
