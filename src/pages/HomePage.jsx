@@ -58,7 +58,7 @@ class HomePage extends Component {
 
                 <br />
                 <Row
-                  title="IMOVIES ORIGINALS"
+                  title="iMovies Originals"
                   moviesURL={this.props.fetchNetflixOriginals}
                   isLargeRow={true}
                 />

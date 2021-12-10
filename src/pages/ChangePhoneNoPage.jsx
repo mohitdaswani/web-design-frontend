@@ -84,7 +84,7 @@ class ChangePhoneNoPage extends Component {
                     type="password"
                   />
                   {errors.password && touched.password ? (
-                    <div>{errors.password}</div>
+                    <div style={{ textAlign: "center", marginLeft: "8px" }}>{errors.password}</div>
                   ) : (
                     <br />
                   )}
@@ -100,12 +100,12 @@ class ChangePhoneNoPage extends Component {
                     type="Number"
                   />
                   {errors.newPhoneNo && touched.newPhoneNo ? (
-                    <div>{errors.newPhoneNo}</div>
+                    <div style={{ textAlign: "center", marginLeft: "8px" }}>{errors.newPhoneNo}</div>
                   ) : (
                     <br />
                   )}
                   <br />
-                  {this.state.error ? <p>{this.state.error}</p> : null}
+                  {this.state.error ? <p style={{ textAlign: "center", marginLeft: "8px" }}>{this.state.error}</p> : null}
 
                   <div style={{display:"flex", justifyContent:"space-evenly"}}>
                   <Button style={{width:"100px"}} size="lg" color="primary" type="submit">

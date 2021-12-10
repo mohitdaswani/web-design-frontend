@@ -12,7 +12,6 @@ import {
   DropdownItem,
 } from "reactstrap";
 import { Redirect } from "react-router-dom";
-import RowMylist from "../components/RowMylist";
 const MoviesPage = ({ getMoviesByLanguage }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [Language, setLanguage] = useState("english");
