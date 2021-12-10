@@ -66,15 +66,15 @@ console.log(this.props)
             onSubmit={this.handleSubmit}
           >
             {({ errors, touched }) => (
-              <Form style={{ display: "flex", flexDirection: "column",color:"coral" }}>
+              <Form style={{ display: "flex", flexDirection: "column",color:"#4267B2" }}>
                 <Field style={{fontSize:"18px",padding:"10px",background: "white", color: "black" }} className="input" name="email" type="email" placeholder="Email"/>
                 {errors.email && touched.email ? (
-                  <p>{errors.email}</p>
+                  <p style={{ textAlign: "center", marginLeft: "8px" }}>{errors.email}</p>
                 ) : <br/>}
                
                 <Field style={{fontSize:"18px",padding:"10px",background: "white", color: "black" }} name="password" type="password" placeholder="Password" />
                 {errors.password && touched.password ? (
-                  <p>{errors.password}</p>
+                  <p style={{ textAlign: "center", marginLeft: "10px" }}>{errors.password}</p>
                 ) : <br/>}
                 {this.state.error ? <p>{this.state.error}</p> : null}
                 <Button size="lg" style = {{ background: "#6495ED"}} type="submit">Submit</Button>

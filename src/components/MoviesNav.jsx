@@ -10,6 +10,8 @@ import {
 import { connect } from "react-redux";
 import { logoutUser } from "../redux/actions/userActions";
 import { searchMovies } from "../redux/actions/movieAction";
+import { FcClapperboard, FcLike, FcVideoFile, FcServices, FcRight } from "react-icons/fc";
+import { left } from "@popperjs/core";
 const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
   const [show, handleShow] = useState();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -69,13 +71,13 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
         <input
           className="search-input"
           type="search"
-          style={{color:"white"}}
+          style={{color:"white", marginTop: "4px", marginLeft: "5px"}}
           onChange={handleSearchChange}
           placeholder="Enter Movie Name..."
         />
         <Dropdown
           isOpen={dropdownOpen}
-          style={{ marginLeft: "10px" }}
+          style={{ marginLeft: "6px" }}
           toggle={toggle}
         >
           <DropdownToggle
@@ -84,12 +86,13 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
           >
             Account
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu style={{}}>
             <DropdownItem>
-              <Link to="/yourAccount">Account </Link>
+              <Link to="/yourAccount"> <FcServices/>&nbsp;Account </Link>
             </DropdownItem>
             <DropdownItem onClick={handleLogout}>
-              Sign out of Netflix
+              
+              <FcRight/>&nbsp;Sign out of iMovies
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>

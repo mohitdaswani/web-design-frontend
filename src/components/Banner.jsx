@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Banner.css";
 import { withRouter, Link } from "react-router-dom";
+import { FcLike } from "react-icons/fc";
 
 const Banner = ({ movies ,history}) => {
   // const [imgurl, setimgurl] = useState(initialState)
@@ -28,9 +29,14 @@ history.push("")
         <div className="banner_buttons">
          <Link to={`movies/${movie._id} `}> <button className="banner_button" >Play</button></Link>
           <Link to="/mylist"><button className="banner_button">My list</button></Link>
-          {/* <div className="banner_description">
-            {truncate(movie?.title, 150)}
-          </div> */}
+          <div className="banner_description">
+            {truncate(Math.floor(movie?.runTime / 60), 150)}h {truncate(Math.floor(movie?.runTime % 60), 150)}mins 
+            | {truncate(movie?.language.charAt(0).toUpperCase() + movie?.language.substr(1).toLowerCase(), 150)} | <FcLike style={{marginTop: "-5"}}/> {truncate(movie?.rating, 150)}
+            <br/>
+            <div className="banner_des">
+              {truncate(movie?.description, 300)}
+            </div>
+          </div>
         </div>
       </div>
       <div className="banner_fadeBottom"/>

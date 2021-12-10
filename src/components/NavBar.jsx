@@ -5,6 +5,8 @@ import { logoutUser } from "../redux/actions/userActions";
 import { NavLink, withRouter } from "react-router-dom";
 import { Button } from "reactstrap";
 import { logoutAdmin } from "../redux/actions/adminAction";
+import { FcPlus, FcCancel } from "react-icons/fc";
+import { left } from "@popperjs/core";
 const NavBar = ({ logoutUser,logoutAdmin, history,extrastyle }) => {
   const handleLogout = async () => {
     if(admin) {
@@ -38,11 +40,11 @@ const NavBar = ({ logoutUser,logoutAdmin, history,extrastyle }) => {
        ? (
         <Button
           color="link"
-          style={{ color: "black", fontSize: "25px" }}
+          style={{ color: "black", fontSize: "15px" }}
           className="ButtonStyle"
           onClick={handleLogout}
         >
-          <i class="fas fa-sign-out-alt"></i> <span style={{color: "whitesmoke"}}>Sign Out</span>
+          <i class="fas fa-sign-out-alt float-center"></i> <span style={{color: "whitesmoke", fontSize: "10"}}>Sign Out</span>
         </Button>
       ) : null}
     </div>

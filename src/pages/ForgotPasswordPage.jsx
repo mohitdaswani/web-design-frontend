@@ -62,7 +62,7 @@ class ForgotPasswordPage extends Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    color: "coral",
+                    color: "#4267B2",
                   }}
                 >
                   <Field

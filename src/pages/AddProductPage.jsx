@@ -304,7 +304,7 @@ if(response){
                 </div>
               </div>
               <br /><br />
-              <input  type="submit" onClick={this.handleSubmit} value="submit" style = {{ background: "#6495ED", marginBottom: "60px", width:"10em"}} />
+              <input type="submit" onClick={this.handleSubmit} value="Submit" style = {{ background: "#6495ED", marginBottom: "60px", width:"10em"}} />
               </div>
             
             </div>

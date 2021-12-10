@@ -78,7 +78,7 @@ const Row = ({
           navigation
           scrollbar={{ draggable: true }}
         >
-          {Movies ? (
+          {Movies && Movies.length > 0 ? (
             Movies.map(movie => (
               <SwiperSlide style={{ width: "25%" }} key={movie._id}>
                 <div

@@ -7,7 +7,7 @@
 .banner_content {
   height: 190px;
   padding-top: 190px;
-  margin-left: 30px;
+  margin-left: 10px;
 }
 .banner_title {
   font-size: 100px;
@@ -27,6 +27,20 @@
   font-size: 1.2rem;
   max-width: 360px;
   height: 80px;
+  margin-left: 10%;
+  text-align: left;
+}
+.banner_des {
+  width: 45rem;
+  display: inline-block;
+  line-height: .9;
+  padding-top: .3rem;
+  font-size: 1rem;
+  max-width: 360px;
+  height: 80px;
+  justify-content: left;
+  opacity: .7;
+  text-align: left;
 }
 .banner_button {
   cursor: pointer;
