@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { getSubscription } from "../redux/actions/subscriptionAction";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import MoviesNav from "../components/MoviesNav";
 class SubscriptionPlanPage extends Component {
   state = {
     items: [
@@ -54,7 +55,7 @@ class SubscriptionPlanPage extends Component {
       <div style={{background:"white"}}>
       {user?
       <>
-      <NavBar/>
+      <MoviesNav/>
       <Container style={{ textAlign: "center", padding: "50px" }}>
         <h1>Plans & Pricing</h1>
         <br />
