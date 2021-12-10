@@ -78,16 +78,16 @@ class ChangePasswordPage extends Component {
             <Form style={{width:"350px" , display: "flex", flexDirection: "column",color:"red" }}>
               <Field style={{background:"white",fontSize: "18px",color:"black", padding: "10px"}} placeholder="Current password" name="oldpassword" type="password" />
               {errors.oldpassword && touched.oldpassword ? (
-                <p>{errors.oldpassword}</p>
+                <p style={{ textAlign: "center", marginLeft: "8px" }}>{errors.oldpassword}</p>
               ) : <br/>}
               
               <Field style={{background:"white",fontSize: "18px",color:"black", padding: "10px"}} placeholder="New password (8-32 characters)" name="password" type="password" />
               {errors.password && touched.password ? (
-                <p>{errors.password}</p>
+                <p style={{ textAlign: "center", marginLeft: "8px" }}>{errors.password}</p>
               ) : <br/>}
               <Field style={{background:"white",fontSize: "18px",color:"black", padding: "10px"}} placeholder="Confirm new password" name="cpassword" type="password" />
               {errors.cpassword && touched.cpassword ? (
-                <p>{errors.cpassword}</p>
+                <p style={{ textAlign: "center", marginLeft: "8px" }}>{errors.cpassword}</p>
               ) : <br/>}
               <br />
               {this.state.error ? <p>{this.state.error}</p> : null}

@@ -3,6 +3,8 @@ import "../styles/MovieDetailPopup.css";
 import { withRouter, Link } from "react-router-dom";
 import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
+import { GiCancel } from "react-icons/gi";
+
 const MovieDetailPopup = ({ movie, addToWatchlist }) => {
   const [Popup, setPopup] = useState(false);
   const [Imgurl, setImgurl] = useState();
@@ -58,7 +60,7 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
             }}
             onClick={handleClick}
           >
-            X
+            <GiCancel/>
           </button>
           <div className="popup_content">
             <h1 className="popup_title">{movie?.MovieName}</h1>
