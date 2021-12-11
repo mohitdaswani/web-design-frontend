@@ -5,6 +5,7 @@ import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
 import { MdCancel } from "react-icons/md";
 import {AiTwotoneStar} from "react-icons/ai"
+import { IoMdAddCircle} from 'react-icons/io';
 
 const MovieDetailPopup = ({ movie, addToWatchlist }) => {
   const [Popup, setPopup] = useState(false);
@@ -80,7 +81,7 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
               <Link to={`movies/${movie._id} `}>
                 <button className="popup_button">Play</button>
               </Link>
-          <button className="banner_button" value={movie._id} onClick={handleAddtoMylist}> + My list</button>
+          <button className="banner_button" value={movie._id} onClick={handleAddtoMylist}> <IoMdAddCircle/> My list</button>
               {/* <button
                 className="popup_button"
                 value={movie._id}
