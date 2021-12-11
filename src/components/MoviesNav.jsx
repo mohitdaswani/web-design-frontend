@@ -44,9 +44,11 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
     };
   }, []);
   return (
-    <div className={`nav ${show && "nav_black"}`} style={{ background: color }}>
+    <div className={`nav ${show && "nav_black"}`} style={{ background: "Red" }}>
+      
 
-<Nav>
+      <Nav>
+        
         <Navlink to='/'>
           <img src={"https://i.pinimg.com/originals/66/dc/76/66dc7687b078fce1a5239985b1f0b1c8.gif"} style={{ width: "10%", display: left }} alt='logo' />
         </Navlink>
