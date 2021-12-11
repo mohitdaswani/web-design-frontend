@@ -11,6 +11,7 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import { FcOk } from 'react-icons/fc';
+import { IoMdAddCircle} from 'react-icons/io';
 
 SwiperCore.use(Navigation);
 const Row = ({
@@ -103,9 +104,9 @@ const Row = ({
                   </Link>
                   <div style={{position:"fixed", marginLeft: "10px"}}>
                   <div className="title" style={{ marginTop: "-125px" }}>
-                    <h4 style={{width:"300px"}}>{movie.MovieName}</h4>
+                    <h4 style={{width:"300px", marginLeft: "0%"}}>{movie.MovieName}</h4>
                     <p className="popup_title" style={{ fontSize: "12px" }}>
-                      {movie.isAdult ? "A" : "U/A"} {movie.runTime}min
+                      {movie.isAdult ? "A" : "U/A"} &#8226; {Math.floor(movie?.runTime / 60)}h {Math.floor(movie?.runTime % 60)}mins
                       <br/>
                       #{movie?.rating} in Imdb
                     </p>
@@ -121,7 +122,9 @@ const Row = ({
                     }`}
                     value={JSON.stringify(movie)}
                     onClick={handlePopup}
-                  />
+                  >
+                    
+                  </button>
                   {list ? (
                     <button
                     style={{outline:"transparent"}}
@@ -131,7 +134,7 @@ const Row = ({
                       value={movie._id}
                       title="Remove from my list"
                       onClick={handleRemoveWatchlist}
-                    ><FcOk style={{width: "24px"}}/></button>
+                    ></button>
                   ) : (
                     <button
                     style={{outline:"transparent"}}

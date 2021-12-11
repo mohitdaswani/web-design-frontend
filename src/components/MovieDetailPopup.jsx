@@ -67,12 +67,12 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
           >
             <MdCancel style={{color: "#C41E3A", width: "30px", marginTop: "-10px"}}/>
           </button>
-          <div className="popup_content">
-            <h1 className="popup_title">{movie?.MovieName}</h1>
-            <h3 className="popup_title" style={{ fontSize: "25px" }}>
+          <div className="popup_content" >
+            <h1 className="popup_title" style={{ display: "flex", justifyContent: "center", textAlign: "center", marginLeft: "0%"  }}>{movie?.MovieName}</h1>
+            <h3 className="popup_title" style={{ fontSize: "25px", display: "flex", justifyContent: "center", textAlign: "center", marginLeft: "0%"  }}>
               {movie.isAdult ? "A" : "U/A"} &#8226; {Duration}
             </h3>
-            <h3 className="popup_title" style={{ fontSize: "40px" }}>
+            <h3 className="popup_title" style={{ fontSize: "40px", display: "flex", justifyContent: "center", textAlign: "center", marginLeft: "0%" }}>
               #{movie?.rating} in Imdb
             </h3>
             {/* <div  className="popup_description">{movie?.title}</div> */}
