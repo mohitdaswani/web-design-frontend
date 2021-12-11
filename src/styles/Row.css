@@ -101,7 +101,7 @@
   border: transparent;
   width: 40px;
   background-color: darkgray;
-  background-image: url("https://image.flaticon.com/icons/png/512/87/87932.png");
+  /* background-image: url("https://image.flaticon.com/icons/png/512/87/87932.png"); */
   background-size: 40px;
   /* background-position: -3px -3px; */
   border-radius: 50%;
@@ -153,4 +153,22 @@
 }
 .my-gallery figure {
   margin: 0px;
+}
+.popup_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+  margin-left: 10%;
+  text-align: left;
+}
+.popup_description {
+  /* width: 45rem; */
+  line-height: .5;
+  /* padding-top: 1rem; */
+  font-size: 1rem;
+  max-width: 450px;
+  /* height: 80px; */
+  margin-left: 10%;
+  text-align: left;
+  margin-top: 5px;
 }

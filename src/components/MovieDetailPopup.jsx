@@ -4,6 +4,7 @@ import { withRouter, Link } from "react-router-dom";
 import { addToWatchlist } from "../redux/actions/watchlistAction";
 import { connect } from "react-redux";
 import { MdCancel } from "react-icons/md";
+import {AiTwotoneStar} from "react-icons/ai"
 
 const MovieDetailPopup = ({ movie, addToWatchlist }) => {
   const [Popup, setPopup] = useState(false);
@@ -39,6 +40,10 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
     e.preventDefault();
    await addToWatchlist(e.target.value);
   };
+
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
   return (
     <>
       {Popup ? (
@@ -46,7 +51,7 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
           className="popup1"
           style={{
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "top",
             backgroundImage: `url("${Imgurl}")`,
           }}
         >
@@ -65,12 +70,12 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
           <div className="popup_content">
             <h1 className="popup_title">{movie?.MovieName}</h1>
             <h3 className="popup_title" style={{ fontSize: "25px" }}>
-              {movie.isAdult ? "A" : "U/A"} {Duration}
+              {movie.isAdult ? "A" : "U/A"} &#8226; {Duration}
             </h3>
-            <h3 className="popup_title" style={{ fontSize: "25px" }}>
+            <h3 className="popup_title" style={{ fontSize: "40px" }}>
               #{movie?.rating} in Imdb
             </h3>
-            <div  className="popup_description">{movie?.title}</div>
+            {/* <div  className="popup_description">{movie?.title}</div> */}
             <div className="popup_buttons">
               <Link to={`movies/${movie._id} `}>
                 <button className="popup_button">Play</button>
@@ -83,15 +88,20 @@ const MovieDetailPopup = ({ movie, addToWatchlist }) => {
               >
                 + My list
               </button> */}
-              <div className="popup_description">{movie?.description}</div>
               <div
                 className="popup_description"
-                style={{ display: "flex", justifyContent: "space-around" }}
+                style={{ display: "flex", justifyContent: "left", textAlign: "center" }}
               >
                 {movieGenres.map((genre) => (
-                  <h5 key={genre}> {genre} </h5>
+                  <h5 key={genre}> {genre} | </h5>
                 ))}
+                <h5>
+                  &nbsp;{movie?.language.charAt(0).toUpperCase() + movie?.language.substr(1).toLowerCase()} | <AiTwotoneStar style={{marginTop: "-5", color: "#FDCC0D"}}/> {movie?.rating}</h5>
+
               </div>
+              {/* <hr class="solid"></hr> */}
+              <div className="popup_description">{truncate(movie?.description, 300)}</div>
+              
             </div>
           </div>
           <div className="popup_fadeBottom" />
