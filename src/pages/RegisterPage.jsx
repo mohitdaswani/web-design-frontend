@@ -94,13 +94,13 @@ class RegisterPage extends Component {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    color: "coral",
+                    color: "#4267B2",
                   }}
                 >
                   <br />
                   <i class="fa fa-users" aria-hidden="true"></i>
                   <br />
-
+                  
                   <Field
                     className="input"
                     placeholder="Name"
@@ -113,7 +113,7 @@ class RegisterPage extends Component {
                     }}
                     name="name"
                   />
-                  {errors.name && touched.name ? <p>{errors.name}</p> : <br />}
+                  {errors.name && touched.name ? <p style={{textAlign: "center", marginLeft: "8px"}}>{errors.name}</p> : <br />}
                   <Field
                     className="input"
                     placeholder="Email"
@@ -125,7 +125,7 @@ class RegisterPage extends Component {
                     <p>{this.state.error.email}</p>
                   ) : null}
                   {errors.email && touched.email ? (
-                    <p>{errors.email}</p>
+                    <p style={{textAlign: "center", marginLeft: "8px"}}>{errors.email}</p>
                   ) : (
                     <br />
                   )}
@@ -137,7 +137,7 @@ class RegisterPage extends Component {
                     type="password"
                   />
                   {errors.password && touched.password ? (
-                    <p>{errors.password}</p>
+                    <p style={{textAlign: "center", marginLeft: "8px"}}>{errors.password}</p>
                   ) : (
                     <br />
                   )}
@@ -149,10 +149,10 @@ class RegisterPage extends Component {
                     type="integer"
                   />
                   {this.state.error.phoneNo ? (
-                    <p>{this.state.error.phoneNo}</p>
+                    <p style={{textAlign: "center", marginLeft: "8px"}}>{this.state.error.phoneNo}</p>
                   ) : null}
                   {errors.phoneNo && touched.phoneNo ? (
-                    <p>{errors.phoneNo}</p>
+                    <p style={{textAlign: "center", marginLeft: "8px"}}>{errors.phoneNo}</p>
                   ) : (
                     <br />
                   )}
@@ -174,10 +174,10 @@ class RegisterPage extends Component {
               )}
             </Formik>
             <br />
-            <p style={{ color: "#F8F8FF" }}>
+            <p style={{ color: "#F8F8FF", textAlign: "left"}}>
               Already a user?
               <Link
-                style={{ fontSize: "17px", color: "white" }}
+                style={{ fontSize: "17px", color: "white"}}
                 to="/user/login"
               >
                 {" "}

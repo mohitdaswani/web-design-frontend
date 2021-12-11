@@ -5,6 +5,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { Button, Container } from "reactstrap";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import MoviesNav from "../components/MoviesNav";
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -73,9 +74,9 @@ const RazorpayPage = ({ razorpaySuccess, match, history }) => {
   };
   return (
     <div style={{ background: "white" }}>
-      <NavBar />
+      <MoviesNav/>
       <Container
-        style={{ paddingTop: "80px", textAlign: "center", width: "285px" }}
+        style={{ paddingTop: "80px", textAlign: "center" }}
       >
         {user ? (
           <>

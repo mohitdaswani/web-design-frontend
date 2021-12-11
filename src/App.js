@@ -12,16 +12,18 @@ import ChangeEmailPage from "./pages/ChangeEmailPage";
 import AccountPage from "./pages/AccountPage";
 
 // Krishna's addition
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AddProductPage from "./pages/AddProductPage";
 import LatestPage from "./pages/LatestPage";
 import MoviePlayerPage from "./pages/MoviePlayerPage";
 import MoviesPage from "./pages/MoviesPage";
 import MylistPage from "./pages/MylistPage";
-import RazorpayPage from './pages/RazorpayPage';
+import RazorpayPage from "./pages/RazorpayPage";
 import SearchPage from "./pages/SearchPage";
 import SubscriptionPlanPage from "./pages/SubscriptionPlanPage";
+import AdminDashboardPage from "./pages/AdminDashboardPage";
+import DeleteMoviePage from "./pages/DeleteMoviePage";
 
 function App() {
   return (
@@ -32,6 +34,13 @@ function App() {
         <Route exact path="/user/Login" component={LoginPage} />
         <Route exact path="/admin/login" component={AdminLoginPage} />
         <Route exact path="/admin/addMovie" component={AddProductPage} />
+        <Route exact path="/admin/adminDashboard" component={AdminDashboardPage} />
+        <Route exact path="/admin/deleteMovie" component={DeleteMoviePage} />
+        <Route
+          exact
+          path="/admin/adminDashboard"
+          component={AdminDashboardPage}
+        />
         <Route
           exact
           path="/user/forgotPassword"
@@ -63,25 +72,9 @@ function App() {
         <Route exact path="/mylist" component={MylistPage} />
         <Route exact path="/movies/:MovieId" component={MoviePlayerPage} />
         <Route
-         
-         
-         
-         
           exact
-        
-        
-        
-        
-              path="/movies/movies/:MovieId"
-        
-        
-        
-        
-              component={MoviePlayerPage}
-       
-       
-       
-       
+          path="/movies/movies/:MovieId"
+          component={MoviePlayerPage}
         />
 
         <Route exact path="/razorpay/:orderId" component={RazorpayPage} />

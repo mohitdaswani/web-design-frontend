@@ -10,6 +10,8 @@ import MovieDetailPopup from "./MovieDetailPopup";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
+import { FcOk } from 'react-icons/fc';
+
 SwiperCore.use(Navigation);
 const Row = ({
   title,
@@ -128,7 +130,7 @@ const Row = ({
                         value={movie._id}
                         title="Remove from my list"
                         onClick={handleRemoveWatchlist}
-                      />
+                      ><FcOk/></button>
                     ) : (
                       <button
                         style={{ outline: "transparent" }}

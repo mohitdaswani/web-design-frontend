@@ -71,7 +71,7 @@ class ForgotPasswordChange extends Component {
                 <Form
                   style={{
                     display: "flex",
-                    color: "coral",
+                    color: "#4267B2",
                     flexDirection: "column",
                   }}
                 >

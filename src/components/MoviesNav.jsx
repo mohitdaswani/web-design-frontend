@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/MoviesNav.css";
-import { NavLink, Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {
   Dropdown,
   DropdownToggle,
@@ -10,6 +10,15 @@ import {
 import { connect } from "react-redux";
 import { logoutUser } from "../redux/actions/userActions";
 import { searchMovies } from "../redux/actions/movieAction";
+import {
+  Nav,
+  Navlink,
+  Bars,
+  NavMenu
+} from './NavbarElements';
+import { FcClapperboard, FcLike, FcVideoFile, FcServices, FcRight } from "react-icons/fc";
+import { left } from "@popperjs/core";
+
 const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
   const [show, handleShow] = useState();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -34,48 +43,47 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
       // window.removeEventListener("scroll")
     };
   }, []);
+
+  const [navOpen, setNavOpen] = useState(false);
+  const OnToggle = () => {
+    setNavOpen(!navOpen);
+    console.log(navOpen);
+  }
+
   return (
-    <div className={`nav ${show && "nav_black"}`} style={{ background: color }}>
+    <div>
       
-      <img
-        className="nav_logo"
-        src="https://i.pinimg.com/originals/66/dc/76/66dc7687b078fce1a5239985b1f0b1c8.gif"
-        alt="Movie logo"
-      />
-      
-      <div style={{ display: "flex", marginLeft: "140px" }}>
-        <p>
-          <NavLink className="navlinkStyle" to="/">
-          <i class="fas fa-home"></i> Home
-          </NavLink>
-        </p>
-        <p>
-          <NavLink className="navlinkStyle" to="/movies/language">
-          <i class="fas fa-film"></i> Movies
-          </NavLink>
-        </p>
-        <p>
-          <NavLink className="navlinkStyle" to="/mylist">
-          <i class="fas fa-list"></i> My List
-          </NavLink>
-        </p>
-        <p>
-          <NavLink className="navlinkStyle" to="/latest">
-          <i class="fas fa-tv"></i>Latest
-          </NavLink>
-        </p>
-      </div>
-      <div style={{ display: "flex",justifyContent:"flex-end" }}>
+
+      <Nav>
+        
+        <Navlink to='/'>
+          <img src={"https://i.pinimg.com/originals/66/dc/76/66dc7687b078fce1a5239985b1f0b1c8.gif"} style={{ width: "10%", display: left }} alt='logo' />
+        </Navlink>
+        <Bars />
+        <NavMenu>
+          {/* <Navlink to='/' activeStyle>
+            Home
+          </Navlink> */}
+          <Navlink to='/movies/language' activeStyle>
+          <FcClapperboard/>&nbsp;Movies
+          </Navlink>
+          <Navlink to='/mylist' activeStyle>
+           <FcLike/>&nbsp;My List
+          </Navlink>
+          <Navlink to='/latest' activeStyle>
+          <FcVideoFile/>&nbsp;Latest
+          </Navlink>
+          <div style={{ display: "flex", justifyContent:"flex-end" }}>
         <input
           className="search-input"
           type="search"
-          style={{color:"white"}}
+          style={{color:"white", marginTop: "4px", marginLeft: "5px"}}
           onChange={handleSearchChange}
           placeholder="Enter Movie Name..."
         />
         <Dropdown
           isOpen={dropdownOpen}
-          style={{ marginLeft: "10px" }}
+          style={{ marginLeft: "6px" }}
           toggle={toggle}
         >
           <DropdownToggle
@@ -84,16 +92,21 @@ const MoviesNav = ({ logoutUser, history, color, searchMovies }) => {
           >
             Account
           </DropdownToggle>
-          <DropdownMenu>
+          <DropdownMenu style={{}}>
             <DropdownItem>
-              <Link to="/yourAccount">Account </Link>
+              <Link to="/yourAccount"> <FcServices/>&nbsp;Account </Link>
             </DropdownItem>
             <DropdownItem onClick={handleLogout}>
-              Sign out of Netflix
+              
+              <FcRight/>&nbsp;Sign out of iMovies
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>
+        </NavMenu>
+        
+      </Nav>
+      
     </div>
   );
 };

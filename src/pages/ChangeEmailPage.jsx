@@ -70,6 +70,7 @@ const ChangeEmailPage = ({ changeEmail, history }) => {
                   display: "flex",
                   flexDirection: "column",
                   color: "red",
+                  textAlign: "center"
                 }}
               >
                 <Field

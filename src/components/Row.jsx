@@ -10,6 +10,9 @@ import MovieDetailPopup from "./MovieDetailPopup";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
+import { FcOk } from 'react-icons/fc';
+import { IoMdAddCircle} from 'react-icons/io';
+
 SwiperCore.use(Navigation);
 const Row = ({
   title,
@@ -48,24 +51,25 @@ const Row = ({
     fetchMovies();
   }, [genre]);
 
-  const handlePopup = e => {
+  const handlePopup = (e) => {
     e.preventDefault();
     const movie = JSON.parse(e.target.value);
     setmovieDetail(movie);
   };
-  const handleRemoveWatchlist = async e => {
+  const handleRemoveWatchlist = async (e) => {
     e.preventDefault();
     const response = await addToWatchlist(e.target.value);
     if (response.statusCode === 201) {
       window.location.reload(false);
     }
   };
-  const handleAddWatchlist = async e => {
+  const handleAddWatchlist = async (e) => {
     e.preventDefault();
     await addToWatchlist(e.target.value);
   };
   return (
     <div className="row1" style={{ styling }}>
+      <container>
       <h2 style={{ margin: "20px 20px 0px" }}>{title}</h2>
       <div>
         <Swiper
@@ -73,20 +77,21 @@ const Row = ({
           style={{ padding: "20px 0px" }}
           spaceBetween={0}
           id="main"
-          slidesPerGroup={Math.floor(document.body.clientWidth / 320)}
-          slidesPerView={Math.floor(document.body.clientWidth / 320)}
+          slidesPerGroup={Math.floor((document.body.clientWidth/320))}
+          slidesPerView={Math.floor((document.body.clientWidth/320))}
           navigation
           scrollbar={{ draggable: true }}
+
         >
           {Movies ? (
-            Movies.map(movie => (
+            Movies.map((movie) => (
               <SwiperSlide style={{ width: "25%" }} key={movie._id}>
                 <div
                   key={movie._id}
                   className="container"
                   style={{ margin: "0px 7px" }}
                 >
-                  <Link to={`movies/${movie._id} `}>
+                  <Link to={`movies/${movie._id}`}>
                     <img
                       src={`https://${
                         isLargeRow ? movie.posterImage : movie.backgroundImage
@@ -97,49 +102,51 @@ const Row = ({
                       alt={movie.MovieName}
                     />
                   </Link>
-                  <div style={{ position: "absolute" }}>
-                    <div className="title" style={{ marginTop: "-115px" }}>
-                      <h4 style={{ width: "150px" }}>{movie.MovieName}</h4>
-                      <p className="popup_title" style={{ fontSize: "12px" }}>
-                        {movie.isAdult ? "A" : "U/A"} {movie.runTime}min
-                      </p>
-                      <p
-                        className="popup_title"
-                        style={{ fontSize: "12px", marginTop: "-10px" }}
-                      >
-                        #{movie?.rating} in Imdb
-                      </p>
-                    </div>
-                    <hr />
+                  <div style={{position:"fixed", marginLeft: "10px"}}>
+                  <div className="title" style={{ marginTop: "-125px" }}>
+                    <h4 style={{width:"300px", marginLeft: "0%"}}>{movie.MovieName}</h4>
+                    <p className="popup_title" style={{ fontSize: "12px" }}>
+                      {movie.isAdult ? "A" : "U/A"} &#8226; {Math.floor(movie?.runTime / 60)}h {Math.floor(movie?.runTime % 60)}mins
+                      <br/>
+                      #{movie?.rating} in Imdb
+                    </p>
+                    {/* <p className="popup_title" style={{ fontSize: "10px" }}>
+                      #{movie?.rating} in Imdb
+                    </p> */}
+                  </div>
+                  <hr />
+                  <button
+                  style={{outline:"transparent"}}
+                    className={`popup ${
+                      Movies.length <= 3 && "shortrowDetail"
+                    }`}
+                    value={JSON.stringify(movie)}
+                    onClick={handlePopup}
+                  >
+                    
+                  </button>
+                  {list ? (
                     <button
-                      style={{ outline: "transparent" }}
-                      className={`popup ${
-                        Movies.length <= 3 && "shortrowDetail"
+                    style={{outline:"transparent"}}
+                      className={`removeMylist ${
+                        Movies.length <= 3 && "shortrow"
                       }`}
-                      value={JSON.stringify(movie)}
-                      onClick={handlePopup}
+                      value={movie._id}
+                      title="Remove from my list"
+                      onClick={handleRemoveWatchlist}
+                    ></button>
+                  ) : (
+                    <button
+                    style={{outline:"transparent"}}
+
+                      className={`addToWatchlist ${
+                        Movies.length <= 3 && "shortrow"
+                      }`}
+                      value={movie._id}
+                      title="Add to my list"
+                      onClick={handleAddWatchlist}
                     />
-                    {list ? (
-                      <button
-                        style={{ outline: "transparent" }}
-                        className={`removeMylist ${
-                          Movies.length <= 3 && "shortrow"
-                        }`}
-                        value={movie._id}
-                        title="Remove from my list"
-                        onClick={handleRemoveWatchlist}
-                      />
-                    ) : (
-                      <button
-                        style={{ outline: "transparent" }}
-                        className={`addToWatchlist ${
-                          Movies.length <= 3 && "shortrow"
-                        }`}
-                        value={movie._id}
-                        title="Add to my list"
-                        onClick={handleAddWatchlist}
-                      />
-                    )}
+                  )}
                   </div>
                 </div>
               </SwiperSlide>
@@ -154,6 +161,7 @@ const Row = ({
         </Swiper>
       </div>
       <MovieDetailPopup movie={MovieDetail} />
+      </container>
     </div>
   );
 };
