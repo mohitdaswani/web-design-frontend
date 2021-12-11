@@ -90,7 +90,7 @@ const Row = ({
                   className="container"
                   style={{ margin: "0px 7px" }}
                 >
-                  <Link to={`movies/${movie._id} `}>
+                  <Link to={`movies/${movie._id}`}>
                     <img
                       src={`https://${
                         isLargeRow ? movie.posterImage : movie.backgroundImage
