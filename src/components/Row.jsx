@@ -114,7 +114,6 @@ const Row = ({
                       #{movie?.rating} in Imdb
                     </p> */}
                   </div>
-                  <hr />
                   <button
                   style={{outline:"transparent"}}
                     className={`popup ${

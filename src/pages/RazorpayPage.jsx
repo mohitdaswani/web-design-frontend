@@ -74,10 +74,8 @@ const RazorpayPage = ({ razorpaySuccess, match, history }) => {
   };
   return (
     <div style={{ background: "white" }}>
-      <MoviesNav/>
-      <Container
-        style={{ paddingTop: "80px", textAlign: "center" }}
-      >
+      <MoviesNav />
+      <Container style={{ paddingTop: "80px", textAlign: "center" }}>
         {user ? (
           <>
             <p>
@@ -99,7 +97,11 @@ const RazorpayPage = ({ razorpaySuccess, match, history }) => {
             {Success ? (
               <h4>Payment Successfully made</h4>
             ) : (
-              <Button color="success" onClick={displayRazorpay}>
+              <Button
+                style={{ marginLeft: "50px" }}
+                color="success"
+                onClick={displayRazorpay}
+              >
                 Process Payment
               </Button>
             )}

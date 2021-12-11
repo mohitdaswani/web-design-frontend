@@ -26,16 +26,13 @@ class SubscriptionPlanPage extends Component {
   };
   handleClick = async (e) => {
     e.preventDefault();
-    console.log(e.target.value)
     if (e.target.value === "Annually") {
       const response = await this.props.getSubscription(this.state.items[1]);
-      console.log(response)
       if(response.hasOwnProperty("order")){
       this.props.history.push(`/razorpay/${response.order.order_id}`)
     }}
     else{
       const response = await this.props.getSubscription(this.state.items[0]);
-      console.log(response,"ASda")
       if(response.hasOwnProperty("order")){
         this.props.history.push(`/razorpay/${response.order.order_id}`)
           }
@@ -52,23 +49,28 @@ class SubscriptionPlanPage extends Component {
     }
 
     return (
-      <div style={{background:"white"}}>
-      {user?
-      <>
-      <MoviesNav/>
-      <Container style={{ textAlign: "center", padding: "50px" }}>
-        <h1>Plans & Pricing</h1>
-        <br />
-        <CardDeck>
-          {this.state.items.map((item) => (
-            <SubscriptionPlanCard key={item.type} handleClick={this.handleClick} item={item} />
-          ))}
-        </CardDeck>
-      </Container>
-      <Footer extrastyle={extrastyle}/>
-      </>
-      :<Redirect to="/user/login"/>}
-
+      <div style={{ background: "white" }}>
+        {user ? (
+          <>
+            <MoviesNav />
+            <Container style={{ textAlign: "center", padding: "50px" }}>
+              <h1>Plans & Pricing</h1>
+              <br />
+              <CardDeck style={{display:"flex"}}>
+                {this.state.items.map(item => (
+                  <SubscriptionPlanCard
+                    key={item.type}
+                    handleClick={this.handleClick}
+                    item={item}
+                  />
+                ))}
+              </CardDeck>
+            </Container>
+            <Footer extrastyle={extrastyle} />
+          </>
+        ) : (
+          <Redirect to="/user/login" />
+        )}
       </div>
     );
   }
