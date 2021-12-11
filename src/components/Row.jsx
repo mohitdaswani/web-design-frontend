@@ -10,6 +10,8 @@ import MovieDetailPopup from "./MovieDetailPopup";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
+import { FcOk } from 'react-icons/fc';
+
 SwiperCore.use(Navigation);
 const Row = ({
   title,
@@ -66,6 +68,7 @@ const Row = ({
   };
   return (
     <div className="row1" style={{ styling }}>
+      <container>
       <h2 style={{ margin: "20px 20px 0px" }}>{title}</h2>
       <div>
         <Swiper
@@ -120,14 +123,13 @@ const Row = ({
                   {list ? (
                     <button
                     style={{outline:"transparent"}}
-
                       className={`removeMylist ${
                         Movies.length <= 3 && "shortrow"
                       }`}
                       value={movie._id}
                       title="Remove from my list"
                       onClick={handleRemoveWatchlist}
-                    />
+                    ><FcOk style={{width: "24px"}}/></button>
                   ) : (
                     <button
                     style={{outline:"transparent"}}
@@ -154,6 +156,7 @@ const Row = ({
         </Swiper>
       </div>
       <MovieDetailPopup movie={MovieDetail} />
+      </container>
     </div>
   );
 };

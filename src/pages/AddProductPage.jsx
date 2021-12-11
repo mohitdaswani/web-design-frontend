@@ -91,7 +91,7 @@ if(response){
         <NavBar extrastyle={style} />
 
         {this.state.status!=="uploaded" ? (
-          <div style={{ margin: "auto", background: "#36486b"}}>
+          <div style={{ margin: "auto", background: "#36486b",}}>
             <div id="admin-bg">
 
             <div id="container">
