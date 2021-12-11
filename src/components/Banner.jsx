@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Banner.css";
 import { withRouter, Link } from "react-router-dom";
-import { FcLike } from "react-icons/fc";
+import { AiTwotoneStar } from "react-icons/ai";
 
 const Banner = ({ movies ,history}) => {
   // const [imgurl, setimgurl] = useState(initialState)
@@ -31,7 +31,7 @@ history.push("")
           <Link to="/mylist"><button className="banner_button">My list</button></Link>
           <div className="banner_description">
             {truncate(Math.floor(movie?.runTime / 60), 150)}h {truncate(Math.floor(movie?.runTime % 60), 150)}mins 
-            | {truncate(movie?.language.charAt(0).toUpperCase() + movie?.language.substr(1).toLowerCase(), 150)} | <FcLike style={{marginTop: "-5"}}/> {truncate(movie?.rating, 150)}
+            | {truncate(movie?.language.charAt(0).toUpperCase() + movie?.language.substr(1).toLowerCase(), 150)} | <AiTwotoneStar style={{marginTop: "-5", color: "#FDCC0D"}}/> {truncate(movie?.rating, 150)}
             <br/>
             <div className="banner_des">
               {truncate(movie?.description, 300)}
