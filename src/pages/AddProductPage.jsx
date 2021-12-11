@@ -95,9 +95,9 @@ if(response){
             <div id="admin-bg">
 
             <div id="container">
-              <h1 style={{margin: "60px 0 10px 0", padding: "40px 20px "}}>Add Movie Details</h1>
+              <h1 style={{margin: "60px 0 10px 0", padding: "40px 20px ", color:"white"}}>Add Movie Details</h1>
               <hr />
-              <h4 style={{ paddingTop: "30px"}}>Name</h4>
+              <h4 style={{ paddingTop: "30px",  color:"white"}}>Name</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.MovieName}
@@ -106,7 +106,7 @@ if(response){
                 class="box-style"
                 // required
               />
-              <h4>Title</h4>
+              <h4 style={{ color:"white"}}>Title</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.title}
@@ -115,7 +115,7 @@ if(response){
                 class="box-style"
                 // required
               />
-              <h4>Description</h4>
+              <h4 style={{ color:"white"}}>Description</h4>
               <textarea
                 onChange={this.handleChange}
                 value={this.state.description}
@@ -127,7 +127,7 @@ if(response){
               ></textarea>
               <br />< br />
               <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
-                <h4>Languages</h4>
+                <h4 style={{ color:"white"}}>Languages</h4>
               </label>
               <select
                 onChange={this.handleChange}
@@ -138,12 +138,12 @@ if(response){
                 class="box-style"
                 id="inlineFormCustomSelect"
               >
-                <option defaultValue>Choose Language</option>
-                <option value="english">English</option>
-                <option value="hindi">Hindi</option>
+                <option defaultValue style={{ color:"white"}}>Choose Language</option>
+                <option value="english" style={{ color:"white"}}>English</option>
+                <option value="hindi" style={{ color:"white"}}>Hindi</option>
               </select>
               <br /><br />
-              <h4>Poster Image</h4>
+              <h4 style={{ color:"white"}}>Poster Image</h4>
               <input
                 onChange={this.handleChange}
                 // value={this.state.posterImage}
@@ -151,9 +151,10 @@ if(response){
                 // required
                 // type="text"
                 class="box-style"
+                style={{paddingBottom:"10px"}}
                 name="posterImage"
               />
-              <h4>Background Image</h4>
+              <h4 style={{ color:"white"}}>Background Image</h4>
               <input
                 onChange={this.handleChange}
                 
@@ -165,16 +166,19 @@ if(response){
                 name="backgroundImage"
               />
               <div>
-              <h4>Release Status</h4>
-                <input 
+              <h4 style={{ color:"white"}}>Release Status</h4>
+              <div>
+              <input 
                   onChange={this.handleChange}
                   value={this.state.isReleased}
                   type="checkbox"
                   name="isReleased"
                 />
-                <label htmlFor="isReleased">isReleased</label>
+                <label htmlFor="isReleased" style={{ color:"white", display:"inline-block"}}>is Released</label>
               </div>
-              <h4>Movie</h4>
+                
+              </div>
+              <h4 style={{ color:"white"}}>Movie</h4>
               <input
                 onChange={this.handleChange}
                 // value={this.state.movie}
@@ -184,7 +188,7 @@ if(response){
                 class="box-style"
                 name="movie"
               />
-              <h4>Date</h4>
+              <h4 style={{ color:"white"}}>Date</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.releasedDate}
@@ -197,14 +201,14 @@ if(response){
                 max="2021-12-31"
               />
               <div>
-                <h4>Movie Type</h4>
+                <h4 style={{ color:"white"}}>Movie Type</h4>
                 <input 
                   onChange={this.handleChange}
                   value={this.state.isAdult}
                   type="checkbox"
                   name="isAdult"
                 />
-                <label htmlFor="isAdult">isAdult</label>
+                <label htmlFor="isAdult" style={{ color:"white"}}>is Adult</label>
               </div>
               <div>
                 <input 
@@ -213,9 +217,9 @@ if(response){
                   type="checkbox"
                   name="isPaid"
                 />
-                <label htmlFor="isPaid">isPaid</label>
+                <label htmlFor="isPaid" style={{ color:"white"}}>is Paid</label>
               </div>
-              <h4>Rating</h4>
+              <h4 style={{ color:"white"}}>Rating</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.rating}
@@ -225,7 +229,7 @@ if(response){
                 class="box-style"
                 // required
               />
-              <h4>Run Time</h4>
+              <h4 style={{ color:"white"}}>Run Time</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.runTime}
@@ -234,7 +238,7 @@ if(response){
                 class="box-style"
                 // required
               />
-              <h4>Country</h4>
+              <h4 style={{ color:"white"}}>Country</h4>
               <input 
                 onChange={this.handleChange}
                 value={this.state.country}
@@ -246,7 +250,7 @@ if(response){
               <br /><br />
               <div style={{textAlign:"center" }}>
                 <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">
-                  <h4>Genre</h4>
+                  <h4 style={{ color:"white"}}>Genre</h4>
                 </label>
                 <div>
                   <input 
@@ -254,8 +258,9 @@ if(response){
                     value={this.state.Action}
                     type="checkbox"
                     name="Action"
+                    
                   />
-                  <label htmlFor="Action">Action</label>
+                  <label htmlFor="Action" style={{ color:"white"}}>Action</label>
                 </div>
                 <div>
                   <input 
@@ -264,7 +269,7 @@ if(response){
                     type="checkbox"
                     name="Adventure"
                   />
-                  <label htmlFor="Adventure">Adventure</label>
+                  <label htmlFor="Adventure" style={{ color:"white"}}>Adventure</label>
                 </div>
                 <div>
                   <input 
@@ -273,7 +278,7 @@ if(response){
                     type="checkbox"
                     name="Comedy"
                   />
-                  <label htmlFor="Comedy">Comedy</label>
+                  <label htmlFor="Comedy" style={{ color:"white"}}>Comedy</label>
                 </div>
                 <div>
                   <input 
@@ -282,7 +287,7 @@ if(response){
                     type="checkbox"
                     name="Drama"
                   />
-                  <label htmlFor="Drama">Drama</label>
+                  <label htmlFor="Drama" style={{ color:"white"}}>Drama</label>
                 </div>
                 <div>
                   <input 
@@ -291,7 +296,7 @@ if(response){
                     type="checkbox"
                     name="Horror"
                   />
-                  <label htmlFor="Horror">Horror</label>
+                  <label htmlFor="Horror" style={{ color:"white"}}>Horror</label>
                 </div>
                 <div>
                   <input 
@@ -300,7 +305,7 @@ if(response){
                     type="checkbox"
                     name="Thriller"
                   />
-                  <label htmlFor="Thriller">Thriller</label>
+                  <label htmlFor="Thriller" style={{ color:"white"}}>Thriller</label>
                 </div>
               </div>
               <br /><br />
@@ -309,7 +314,7 @@ if(response){
             
             </div>
             
-          </div>):<h1>uploaded...</h1>}
+          </div>):<h1 style={{ color:"white"}}>uploaded...</h1>}
 </>
         : (
           <Redirect to="/admin/login" />

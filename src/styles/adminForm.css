@@ -2,11 +2,12 @@
     width: 50%;
     text-align: center;
     margin: auto;
-    background-color:wheat;
+    background-color:black;
 }
 .box-style{
     font-size: 18px;
     padding: 10px;
+    padding-bottom: 10px;
     background: white;
     color: black;
     margin-top: 10px;
@@ -14,7 +15,9 @@
     border: 1px solid blue;
 }
 #admin-bg{
-    background: url("https://media.istockphoto.com/photos/pop-corn-and-on-red-armchair-cinema-picture-id1271522601?b=1&k=20&m=1271522601&s=170667a&w=0&h=azZRRchShbrwRgq58omc1HOYABnfDDOzXJatuaZrueQ=");
+    /* background: url("https://media.istockphoto.com/photos/pop-corn-and-on-red-armchair-cinema-picture-id1271522601?b=1&k=20&m=1271522601&s=170667a&w=0&h=azZRRchShbrwRgq58omc1HOYABnfDDOzXJatuaZrueQ="); */
+    background: url("https://collider.com/wp-content/uploads/film-collage-2013-x.jpg");
+    
 }
 @media only screen and (max-width: 600px) {
     #container{
@@ -25,6 +28,7 @@
     .box-style{
         font-size: 14px;
         padding: 10px;
+        padding-bottom: 10px;
         background: white;
         color: black;
         margin-bottom: 10px;
